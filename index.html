@@ -72,6 +72,44 @@ tbody tr:hover{background:#eff6ff}
 @media(max-width:768px){.section-body{padding:1rem}.stat-grid{grid-template-columns:repeat(2,1fr)}.strat-grid{grid-template-columns:1fr}table{font-size:.75rem}thead th{font-size:.68rem;padding:.4rem .5rem}tbody td{font-size:.73rem;padding:.4rem .5rem}.hero-meta{flex-direction:column;gap:.3rem}.nav-inner a{font-size:.72rem;padding:.35rem .55rem}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .section{animation:fadeInUp .4s ease both}
+
+/* ===== Architecture Evolution Diagram ===== */
+.arch-evolution{display:flex;align-items:stretch;gap:0;margin:1.5rem 0;flex-wrap:wrap}
+.arch-stage{flex:1;min-width:240px;border-radius:var(--radius);padding:1rem;border:2px solid;position:relative;overflow:hidden}
+.arch-traditional{background:#f8fafc;border-color:#cbd5e1}
+.arch-separated{background:#eff6ff;border-color:#93c5fd}
+.arch-integrated{background:#fdf2f8;border-color:#f9a8d4}
+.arch-stage-title{font-weight:800;font-size:.9rem;margin-bottom:.2rem}
+.arch-stage-subtitle{font-size:.78rem;color:var(--c-text2);margin-bottom:.8rem}
+.arch-vehicle-box{background:#fff;border-radius:8px;padding:.8rem;border:1px dashed var(--c-border);min-height:180px;display:flex;flex-direction:column;justify-content:center}
+.arch-ecu-row{display:flex;gap:.3rem;justify-content:center;margin-bottom:.3rem;flex-wrap:wrap}
+.arch-ecu{background:#e2e8f0;color:#475569;font-size:.68rem;padding:3px 8px;border-radius:4px;white-space:nowrap}
+.arch-ecu-count{text-align:center;font-size:.72rem;color:var(--c-text2);margin-top:.5rem;font-weight:600;padding:.3rem;background:#f8fafc;border-radius:6px}
+.arch-domain-group{display:flex;gap:.4rem;justify-content:center}
+.arch-domain{border-radius:8px;padding:.5rem;text-align:center;flex:1;min-width:80px}
+.arch-cockpit{background:#dbeafe;border:2px solid #60a5fa}
+.arch-driving{background:#d1fae5;border:2px solid #34d399}
+.arch-body{background:#f1f5f9;border:2px solid #cbd5e1}
+.arch-power{background:#fef3c7;border:2px solid #fcd34d}
+.arch-domain-label{font-size:.72rem;font-weight:700;color:var(--c-text)}
+.arch-chip{font-size:.65rem;color:var(--c-text2);margin-top:.2rem;font-weight:600}
+.arch-cooling-mini{font-size:.6rem;margin-top:.2rem;padding:1px 6px;border-radius:4px;background:#fff;color:#1e40af;font-weight:600}
+.arch-central-compute{background:linear-gradient(135deg,#fce7f3,#fbcfe8);border:3px solid #ec4899;border-radius:10px;padding:.8rem;text-align:center}
+.arch-cc-label{font-weight:800;font-size:.82rem;color:#9d174d;margin-bottom:.4rem}
+.arch-cc-chips{display:flex;align-items:center;gap:.3rem;justify-content:center}
+.arch-chip-big{border-radius:8px;padding:.4rem;font-size:.7rem;font-weight:700;min-width:70px}
+.arch-chip-big small{font-weight:400;font-size:.6rem}
+.cockpit-side{background:#dbeafe;color:#1e40af}
+.driving-side{background:#d1fae5;color:#065f46}
+.arch-cc-divider{font-size:1rem;font-weight:800;color:#9d174d}
+.arch-cc-board{font-size:.62rem;color:#9d174d;margin-top:.3rem;font-weight:600}
+.arch-cooling-tag{text-align:center;font-size:.72rem;font-weight:700;padding:.4rem;border-radius:6px;margin-top:.6rem}
+.arch-arrow{display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:800;color:var(--c-accent);padding:0 .3rem;min-width:30px}
+@media(max-width:768px){
+  .arch-evolution{flex-direction:column}
+  .arch-arrow{transform:rotate(90deg);padding:1rem 0}
+  .arch-stage{min-width:100%}
+}
 </style>
 </head>
 <body>
@@ -158,10 +196,99 @@ tbody tr:hover{background:#eff6ff}
         <tr><td><strong>一汽红旗</strong></td><td>分离式</td><td>征程/Orin</td><td>8155</td><td><span class="tag tag-fsw">FSW</span></td><td>红旗1号待量产</td></tr>
       </tbody>
     </table></div>
-  </div>
-</div>
 
-<!-- 三、海外车企 -->
+    <h3 style="margin-top:1.5rem">2.2 整车电子架构演进趋势图</h3>
+    <p style="font-size:.85rem;color:var(--c-text2);margin-bottom:1rem">从分布式ECU → 域控分离式 → 舱驾一体中央计算，散热需求从"多块小冷板"演变为"单块高算力冷板"</p>
+
+    <div class="arch-evolution">
+      <!-- 阶段1: 传统汽车 -->
+      <div class="arch-stage arch-traditional">
+        <div class="arch-stage-title">阶段一：传统汽车</div>
+        <div class="arch-stage-subtitle">分布式ECU架构</div>
+        <div class="arch-vehicle-box">
+          <div class="arch-ecu-row">
+            <span class="arch-ecu">发动机ECU</span>
+            <span class="arch-ecu">变速箱ECU</span>
+            <span class="arch-ecu">车身ECU</span>
+          </div>
+          <div class="arch-ecu-row">
+            <span class="arch-ecu">仪表ECU</span>
+            <span class="arch-ecu">空调ECU</span>
+            <span class="arch-ecu">ABS ECU</span>
+          </div>
+          <div class="arch-ecu-row">
+            <span class="arch-ecu">车门ECU</span>
+            <span class="arch-ecu">灯光ECU</span>
+            <span class="arch-ecu">...100+个</span>
+          </div>
+          <div class="arch-ecu-count">100+ 个独立ECU · 各自独立散热（风冷即可）</div>
+        </div>
+        <div class="arch-cooling-tag" style="background:#f1f5f9;color:#64748b">散热方式：风冷为主，无水冷板需求</div>
+      </div>
+
+      <!-- 箭头 -->
+      <div class="arch-arrow">→</div>
+
+      <!-- 阶段2: 智能汽车（分离式域控） -->
+      <div class="arch-stage arch-separated">
+        <div class="arch-stage-title">阶段二：智能汽车（当前主流 90%+）</div>
+        <div class="arch-stage-subtitle">域控分离式架构</div>
+        <div class="arch-vehicle-box">
+          <div class="arch-domain-group">
+            <div class="arch-domain arch-cockpit">
+              <div class="arch-domain-label">智能座舱域控</div>
+              <div class="arch-chip">高通8295</div>
+              <div class="arch-cooling-mini">单面散热 · FSW</div>
+            </div>
+            <div class="arch-domain arch-driving">
+              <div class="arch-domain-label">智能驾驶域控</div>
+              <div class="arch-chip">Orin-X / 征程6</div>
+              <div class="arch-cooling-mini">单面散热 · FSW</div>
+            </div>
+          </div>
+          <div class="arch-domain-group" style="margin-top:.6rem">
+            <div class="arch-domain arch-body">
+              <div class="arch-domain-label">车身域控</div>
+            </div>
+            <div class="arch-domain arch-power">
+              <div class="arch-domain-label">动力域控</div>
+            </div>
+          </div>
+          <div class="arch-ecu-count" style="margin-top:.6rem">2块域控水冷板 · 各自独立 · 规则流道</div>
+        </div>
+        <div class="arch-cooling-tag" style="background:#dbeafe;color:#1e40af">散热方式：FSW搅拌摩擦焊（单面散热，成本优）</div>
+      </div>
+
+      <!-- 箭头 -->
+      <div class="arch-arrow">→</div>
+
+      <!-- 阶段3: 舱驾一体 -->
+      <div class="arch-stage arch-integrated">
+        <div class="arch-stage-title">阶段三：智能汽车（未来趋势 &lt;10%）</div>
+        <div class="arch-stage-subtitle">舱驾一体中央计算架构</div>
+        <div class="arch-vehicle-box">
+          <div class="arch-central-compute">
+            <div class="arch-cc-label">中央计算平台</div>
+            <div class="arch-cc-chips">
+              <div class="arch-chip-big cockpit-side">座舱SoC<br><small>高通8295/8797</small></div>
+              <div class="arch-cc-divider">+</div>
+              <div class="arch-chip-big driving-side">智驾SoC<br><small>Orin-X/神玑/图灵</small></div>
+            </div>
+            <div class="arch-cc-board">同一块板卡（One Board / One Chip）</div>
+          </div>
+          <div class="arch-domain-group" style="margin-top:.6rem;opacity:.5">
+            <div class="arch-domain arch-body"><div class="arch-domain-label">车身/网关</div></div>
+            <div class="arch-domain arch-power"><div class="arch-domain-label">底盘域</div></div>
+          </div>
+          <div class="arch-ecu-count" style="margin-top:.6rem">1块高算力水冷板 · 正反面散热 · 复杂流道</div>
+        </div>
+        <div class="arch-cooling-tag" style="background:#fce7f3;color:#9d174d">散热方式：钎焊（正反面散热，复杂流道，高热冗余）</div>
+      </div>
+    </div>
+
+    <div class="callout key" style="margin-top:1rem"><strong>架构演进对水冷板的核心影响：</strong><br>• <strong>传统→分离式</strong>：从无水冷板 → 需要2块独立FSW水冷板（当前最大市场）<br>• <strong>分离式→舱驾一体</strong>：从2块FSW水冷板 → 1块钎焊水冷板（正反面散热+复杂流道）<br>• <strong>关键判断</strong>：分离式架构仍将占据3-5年主流，FSW水冷板是基本盘；舱驾一体钎焊是增量方向</div>
+
+    <h3 style="margin-top:1.5rem">2.3 国内车企域控架构分类</h3>
 <div class="section" id="overseas">
   <div class="section-header"><span class="icon" style="background:#fef3c7;color:#92400e">🌍</span><h2>三、海外车企域控制器发展规划</h2></div>
   <div class="section-body">

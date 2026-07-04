@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="东山精密汽车水冷板业务发展趋势报告 - 面向管理层战略决策">
+<title>东山精密·汽车水冷板业务发展趋势报告</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--c-primary:#0f1e3d;--c-primary2:#1a3358;--c-accent:#2563eb;--c-accent2:#0ea5e9;--c-gold:#d97706;--c-green:#059669;--c-red:#dc2626;--c-bg:#f8fafc;--c-surface:#ffffff;--c-border:#e2e8f0;--c-text:#1e293b;--c-text2:#64748b;--c-text3:#94a3b8;--radius:12px;--shadow:0 2px 12px rgba(0,0,0,.06);--shadow-lg:0 8px 32px rgba(0,0,0,.1);--max-w:1100px;--font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-sans);background:var(--c-bg);color:var(--c-text);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.hero{background:linear-gradient(135deg,#0f1e3d 0%,#1a3358 50%,#0c4a6e 100%);color:#fff;padding:clamp(2.5rem,6vw,4.5rem) clamp(1rem,5vw,2rem);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-15%;width:550px;height:550px;background:radial-gradient(circle,rgba(37,99,235,.18) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(14,165,233,.12) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+.hero-inner{max-width:var(--max-w);margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:6px 18px;font-size:.85rem;font-weight:500;margin-bottom:1.2rem}
+.hero h1{font-size:clamp(1.4rem,4vw,2rem);font-weight:800;line-height:1.3;margin-bottom:.6rem}
+.hero-subtitle{font-size:clamp(.9rem,2vw,1.1rem);opacity:.75;margin-bottom:1.5rem;max-width:680px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:1rem 2rem;font-size:.82rem;opacity:.65}
+.hero-producer{margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.12);font-size:.9rem;display:flex;align-items:center;gap:.6rem}
+.hero-producer strong{color:var(--c-gold);font-size:1.05rem}
+.nav-bar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--c-border);overflow-x:auto;scrollbar-width:none}
+.nav-bar::-webkit-scrollbar{display:none}
+.nav-inner{max-width:var(--max-w);margin:0 auto;display:flex;gap:.15rem;padding:.4rem 1rem}
+.nav-inner a{white-space:nowrap;padding:.45rem .8rem;border-radius:8px;font-size:.78rem;font-weight:500;color:var(--c-text2);transition:all .2s}
+.nav-inner a:hover,.nav-inner a.active{background:var(--c-accent);color:#fff;text-decoration:none}
+.container{max-width:var(--max-w);margin:0 auto;padding:2rem 1rem}
+.section{background:var(--c-surface);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:1.5rem;overflow:hidden;border:1px solid var(--c-border)}
+.section-header{padding:1.1rem 1.5rem;border-bottom:1px solid var(--c-border);display:flex;align-items:center;gap:.7rem;background:#fafbfc}
+.section-header .icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.section-body{padding:1.5rem}
+.section-body > * + *{margin-top:1rem}
+h2{font-size:clamp(1.15rem,3vw,1.5rem);font-weight:700}
+h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem}
+h4{font-size:1rem;font-weight:600;margin-bottom:.3rem}
+.callout{border-radius:0 var(--radius) var(--radius) 0;padding:.9rem 1.2rem;font-size:.9rem;margin:1rem 0;border-left:4px solid}
+.callout.key{background:linear-gradient(135deg,#eff6ff,#f0f9ff);border-color:var(--c-accent)}
+.callout.warn{background:linear-gradient(135deg,#fffbeb,#fefce8);border-color:var(--c-gold)}
+.callout.strat{background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-color:var(--c-green)}
+.callout.danger{background:linear-gradient(135deg,#fef2f2,#fefce8);border-color:var(--c-red)}
+.callout.value{background:linear-gradient(135deg,#fef3c7,#fde68a);border-color:var(--c-gold);font-size:.95rem}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--c-border);border-radius:var(--radius);margin:1rem 0}
+table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:600px}
+thead{background:linear-gradient(135deg,var(--c-primary),var(--c-primary2));color:#fff}
+thead th{padding:.65rem .8rem;text-align:left;font-weight:600;font-size:.78rem;white-space:nowrap}
+tbody td{padding:.6rem .8rem;border-bottom:1px solid var(--c-border);vertical-align:top}
+tbody tr:nth-child(even){background:#f8fafc}
+tbody tr:hover{background:#eff6ff}
+.tag{display:inline-block;padding:2px 10px;border-radius:99px;font-size:.72rem;font-weight:600;white-space:nowrap}
+.tag-fsw{background:#dbeafe;color:#1e40af}.tag-braze{background:#fce7f3;color:#9d174d}
+.tag-green{background:#d1fae5;color:#065f46}.tag-yellow{background:#fef3c7;color:#92400e}
+.tag-red{background:#fee2e2;color:#991b1b}.tag-gray{background:#f1f5f9;color:#475569}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.8rem;margin:1rem 0}
+.stat-card{background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--radius);padding:1.1rem;text-align:center}
+.stat-card .stat-num{font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,var(--c-accent),var(--c-accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-card .stat-label{font-size:.78rem;color:var(--c-text2);margin-top:.2rem}
+.strat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1rem 0}
+.strat-card{border-radius:var(--radius);padding:1.2rem;border:1px solid var(--c-border);position:relative;overflow:hidden}
+.strat-card.s1{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#93c5fd}
+.strat-card.s2{background:linear-gradient(135deg,#f0fdf4,#d1fae5);border-color:#86efac}
+.strat-card.s3{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:#fcd34d}
+.strat-card .strat-num{font-size:2rem;font-weight:800;opacity:.15;position:absolute;top:.5rem;right:.8rem}
+.strat-card h4{font-size:1rem;margin-bottom:.4rem;position:relative;z-index:1}
+.strat-card p{font-size:.85rem;position:relative;z-index:1}
+.footer{background:var(--c-primary);color:rgba(255,255,255,.6);text-align:center;padding:2rem 1rem;margin-top:3rem;font-size:.82rem}
+.footer strong{color:var(--c-gold)}
+.back-top{position:fixed;bottom:24px;right:24px;width:42px;height:42px;background:var(--c-accent);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:var(--shadow-lg);opacity:0;transform:translateY(20px);transition:all .3s;z-index:99}
+.back-top.visible{opacity:1;transform:translateY(0)}
+.back-top:hover{background:var(--c-accent2)}
+@media print{.nav-bar,.back-top,.footer{display:none}.section{break-inside:avoid;box-shadow:none;border:1px solid #ddd}body{background:#fff}}
+@media(max-width:768px){.section-body{padding:1rem}.stat-grid{grid-template-columns:repeat(2,1fr)}.strat-grid{grid-template-columns:1fr}table{font-size:.75rem}thead th{font-size:.68rem;padding:.4rem .5rem}tbody td{font-size:.73rem;padding:.4rem .5rem}.hero-meta{flex-direction:column;gap:.3rem}.nav-inner a{font-size:.72rem;padding:.35rem .55rem}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.section{animation:fadeInUp .4s ease both}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">📊 管理层战略汇报</div>
+    <h1>汽车水冷板业务发展趋势报告</h1>
+    <p class="hero-subtitle">覆盖国内外21家车企 · 东山精密2025年财报分析 · FSW与钎焊战略抉择 · 创造客户价值 · 20%份额目标路径</p>
+    <div class="hero-meta">
+      <span>📅 2026年Q3-Q4</span>
+      <span>🏢 东山精密·汽车业务事业部</span>
+      <span>🔒 内部机密·限管理层传阅</span>
+    </div>
+    <div class="hero-producer">出品人：<strong>大象咨询</strong></div>
+  </div>
+</header>
+
+<nav class="nav-bar" id="navBar">
+  <div class="nav-inner">
+    <a href="#summary">执行摘要</a>
+    <a href="#domain">域控格局</a>
+    <a href="#overseas">海外车企</a>
+    <a href="#route">技术路线</a>
+    <a href="#finance">财报分析</a>
+    <a href="#strategy">战略方向</a>
+    <a href="#sales">市场策略</a>
+    <a href="#customer">客户档案</a>
+    <a href="#goal">目标设定</a>
+    <a href="#action">行动建议</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- 一、执行摘要 -->
+<div class="section" id="summary">
+  <div class="section-header"><span class="icon" style="background:#dbeafe;color:#2563eb">📌</span><h2>一、执行摘要</h2></div>
+  <div class="section-body">
+    <div class="callout key"><strong>核心判断：</strong>分离式域控（座舱+智驾独立）仍是当前绝对主流，占比超90%，对应<strong>搅拌摩擦焊（FSW）</strong>工艺路线是水冷板业务的基本盘。舱驾一体是长期趋势但过渡期漫长，<strong>东山精密应在FSW领域巩固并扩大份额，同时储备钎焊能力</strong>，不应将资源全部押注在舱驾一体的钎焊市场。</div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">90%+</div><div class="stat-label">分离式域控当前占比<br>（FSW工艺主战场）</div></div>
+      <div class="stat-card"><div class="stat-num">401亿</div><div class="stat-label">东山精密2025年营收<br>同比+9.12%</div></div>
+      <div class="stat-card"><div class="stat-num">100亿+</div><div class="stat-label">新能源业务2025年营收<br>同比+22.08%</div></div>
+      <div class="stat-card"><div class="stat-num">20%</div><div class="stat-label">公司战略目标市场份额<br>（不分工艺路线）</div></div>
+    </div>
+    <div class="strat-grid">
+      <div class="strat-card s1"><span class="strat-num">1</span><h4>盯住基本盘</h4><p>分离式域控仍将长期主流，FSW工艺是最大机会窗口。国内14家+海外丰田/本田/大众等均为分离式架构。</p></div>
+      <div class="strat-card s2"><span class="strat-num">2</span><h4>先切入再升级</h4><p>只要材料不亏有微利就"一只脚跨进去"，先建立合作渠道。从FSW入手切入，后续随客户升级自然衔接钎焊。</p></div>
+      <div class="strat-card s3"><span class="strat-num">3</span><h4>创造客户价值</h4><p>以全链路工艺制造能力和系统级热管理方案为客户创造价值，成为客户信赖的长期合作伙伴，而非零件供应商。</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 二、国内车企域控格局 -->
+<div class="section" id="domain">
+  <div class="section-header"><span class="icon" style="background:#ede9fe;color:#6d28d9">🏭</span><h2>二、国内车企域控制器发展规划</h2></div>
+  <div class="section-body">
+    <h3>2.1 域控架构与水冷板工艺的对应关系</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>架构类型</th><th>热源特征</th><th>流道复杂度</th><th>水冷板工艺</th><th>当前占比</th></tr></thead>
+      <tbody>
+        <tr><td><strong>分离式</strong>（座舱+智驾独立）</td><td>热源分散，单域功耗可控</td><td>规则蛇形流道为主</td><td><span class="tag tag-fsw">搅拌摩擦焊 FSW</span></td><td><strong>90%+</strong></td></tr>
+        <tr><td><strong>舱驾一体</strong>（中央计算平台）</td><td>多热源集中，正反面均需散热</td><td>多层流道/针翅/铜铝复合</td><td><span class="tag tag-braze">钎焊</span></td><td><strong><10%</strong></td></tr>
+      </tbody>
+    </table></div>
+    <h3>2.2 国内车企域控架构分类</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>车企</th><th>当前域控架构</th><th>智驾芯片</th><th>座舱芯片</th><th>水冷板工艺</th><th>舱驾一体规划</th></tr></thead>
+      <tbody>
+        <tr><td><strong>比亚迪</strong></td><td>分离式</td><td>双Orin-X/征程5</td><td>8295/8155</td><td><span class="tag tag-fsw">FSW</span></td><td>2027+（璇玑A3）</td></tr>
+        <tr><td><strong>吉利</strong></td><td>分离式为主</td><td>Orin-X/Thor/征程6M</td><td>8295/龙鹰一号</td><td><span class="tag tag-fsw">FSW为主</span></td><td>亿咖通单芯片已验证</td></tr>
+        <tr><td><strong>长城</strong></td><td>分离式</td><td>Orin-X/征程</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>未公布</td></tr>
+        <tr><td><strong>长安</strong></td><td>分离式</td><td>华为昇腾/征程</td><td>8155/8295</td><td><span class="tag tag-fsw">FSW</span></td><td>德赛西威合作中</td></tr>
+        <tr style="background:#fdf2f8"><td><strong>蔚来</strong> ⭐</td><td><strong>舱驾融合One Board</strong></td><td>4×Orin-X→神玑</td><td>8295</td><td><span class="tag tag-braze">钎焊</span></td><td>✅ 已量产</td></tr>
+        <tr><td><strong>小鹏</strong></td><td>分离式</td><td>双Orin-X→图灵AI</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>图灵支持，待明确</td></tr>
+        <tr><td><strong>理想</strong></td><td>分离式</td><td>双Orin-X/征程5</td><td>8295→8797</td><td><span class="tag tag-fsw">FSW</span></td><td>LEEA 3.0演进中</td></tr>
+        <tr><td><strong>问界(华为)</strong></td><td>分离式</td><td>华为昇腾MDC</td><td>华为麒麟</td><td><span class="tag tag-fsw">FSW</span></td><td>2026-2027</td></tr>
+        <tr style="background:#fdf2f8"><td><strong>小米</strong> ⭐</td><td><strong>分离式→四合一（YU7起钎焊）</strong></td><td>双Orin-X</td><td>8295/骁龙8 Gen3</td><td><span class="tag tag-braze">钎焊（YU7起）</span></td><td>2026款SU7四合一</td></tr>
+        <tr style="background:#fdf2f8"><td><strong>零跑</strong> ⭐</td><td><strong>四域合一中央计算</strong></td><td>Orin-X/征程</td><td>8295</td><td><span class="tag tag-braze">钎焊</span></td><td>✅ 已量产</td></tr>
+        <tr><td><strong>上汽(智己)</strong></td><td>分离式(双HPC)</td><td>Orin-X</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>零束3.0演进中</td></tr>
+        <tr><td><strong>广汽(昊铂)</strong></td><td>分离式</td><td>Orin-X/征程</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>星灵架构规划中</td></tr>
+        <tr><td><strong>奇瑞</strong></td><td>分离式</td><td>征程6P/TI TDA4</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>整合中</td></tr>
+        <tr><td><strong>一汽红旗</strong></td><td>分离式</td><td>征程/Orin</td><td>8155</td><td><span class="tag tag-fsw">FSW</span></td><td>红旗1号待量产</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<!-- 三、海外车企 -->
+<div class="section" id="overseas">
+  <div class="section-header"><span class="icon" style="background:#fef3c7;color:#92400e">🌍</span><h2>三、海外车企域控制器发展规划</h2></div>
+  <div class="section-body">
+    <div class="table-wrap"><table>
+      <thead><tr><th>车企</th><th>当前域控架构</th><th>智驾芯片/方案</th><th>座舱芯片</th><th>水冷板工艺</th><th>舱驾一体规划</th></tr></thead>
+      <tbody>
+        <tr style="background:#fdf2f8"><td><strong>特斯拉</strong> ⭐</td><td><strong>舱驾融合（中央计算）</strong></td><td>自研FSD芯片（HW4.0）</td><td>AMD Ryzen+Apollo</td><td><span class="tag tag-braze">钎焊</span></td><td>✅ 已量产（行业最早）</td></tr>
+        <tr><td><strong>奔驰</strong></td><td>分离式→中央计算</td><td>英伟达Orin-X/Thor（DRIVE PILOT L3）</td><td>高通8295（MB.OS首发）</td><td><span class="tag tag-fsw">FSW</span>→<span class="tag tag-braze">钎焊</span></td><td>MB.OS 2025起逐步中央计算</td></tr>
+        <tr><td><strong>宝马</strong></td><td>分离式→舱驾融合</td><td>Mobileye（当前）/高通8775（下一代）</td><td>高通8155→8775</td><td><span class="tag tag-fsw">FSW</span>→<span class="tag tag-braze">钎焊</span></td><td><strong>率先押注高通8775舱驾融合</strong></td></tr>
+        <tr><td><strong>大众</strong></td><td>分离式</td><td>CARIAD+地平线酷睿程自研(500-700 TOPS)</td><td>高通8155/8195</td><td><span class="tag tag-fsw">FSW</span></td><td>与小鹏合作，中央计算规划中</td></tr>
+        <tr><td><strong>丰田</strong></td><td>分离式</td><td>博世+高通方案（L2级ADAS含高速NOA）</td><td>高通8155</td><td><span class="tag tag-fsw">FSW</span></td><td>暂无明确规划</td></tr>
+        <tr><td><strong>本田</strong></td><td>分离式</td><td>传统Tier1方案（博世/大陆等）</td><td>高通8155</td><td><span class="tag tag-fsw">FSW</span></td><td>暂无明确规划</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout key"><strong>海外车企关键发现：</strong><br>• <strong>特斯拉</strong>是舱驾一体+钎焊水冷板的鼻祖，HW4.0智驾与座舱共用MCU，中央计算架构最成熟<br>• <strong>宝马</strong>率先押注高通8775单芯片舱驾融合方案，是传统豪华品牌中转型最激进的<br>• <strong>奔驰</strong>MB.OS 2025年随CLA首发，英伟达Thor+高通8295组合，L3级DRIVE PILOT已认证<br>• <strong>大众</strong>通过CARIAD+地平线酷睿程合资自研芯片（500-700 TOPS），深度绑定中国本土技术<br>• <strong>丰田/本田</strong>智能化节奏偏慢，仍以分离式+传统Tier1方案为主，FSW工艺需求</div>
+  </div>
+</div>
+
+<!-- 四、技术路线 -->
+<div class="section" id="route">
+  <div class="section-header"><span class="icon" style="background:#fef3c7;color:#92400e">🔧</span><h2>四、水冷板技术路线判断</h2></div>
+  <div class="section-body">
+    <h3>4.1 两种工艺的本质差异</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>维度</th><th>搅拌摩擦焊FSW</th><th>钎焊</th></tr></thead>
+      <tbody>
+        <tr><td><strong>原理</strong></td><td>固相连接，母材不熔化</td><td>钎料熔化润湿母材，整体进炉</td></tr>
+        <tr><td><strong>适用架构</strong></td><td>分离式域控</td><td>舱驾一体中央计算平台</td></tr>
+        <tr><td><strong>散热特征</strong></td><td>单面散热，规则流道</td><td><strong>正反面散热</strong>，复杂流道/针翅</td></tr>
+        <tr><td><strong>成本（整件）</strong></td><td>基准1x</td><td>1.5-3x</td></tr>
+        <tr><td><strong>典型客户</strong></td><td>大众、吉利、比亚迪、奇瑞</td><td>特斯拉、蔚来、零跑、小米</td></tr>
+      </tbody>
+    </table></div>
+    <h3>4.2 当前市场份额估算</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>工艺路线</th><th>占比</th><th>主要客户</th><th>趋势</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag tag-fsw">FSW</span></td><td><strong>约90-92%</strong></td><td>比亚迪/吉利/长城/长安/理想/小鹏/问界/大众/丰田/本田等</td><td>未来3-5年仍是绝对主流</td></tr>
+        <tr><td><span class="tag tag-braze">钎焊</span></td><td><strong>约8-10%</strong></td><td>特斯拉/蔚来/零跑/小米/宝马(下一代)</td><td>2027后逐步提升</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout key"><strong>关键判断：</strong>算力700 TOPS是水冷板工艺的分水岭。低于700 TOPS的分离式平台（当前90%+市场），FSW即可满足散热需求且成本更优；700 TOPS以上的舱驾一体平台才真正需要钎焊。这意味着<strong>FSW市场容量远大于钎焊市场</strong>，且将持续3-5年以上。</div>
+  </div>
+</div>
+
+<!-- 五、财报分析 -->
+<div class="section" id="finance">
+  <div class="section-header"><span class="icon" style="background:#dcfce7;color:#15803d">📊</span><h2>五、东山精密2025年财报分析</h2></div>
+  <div class="section-body">
+    <h3>5.1 关键财务数据</h3>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-num">401亿</div><div class="stat-label">2025年营收<br>同比+9.12%</div></div>
+      <div class="stat-card"><div class="stat-num">13.3亿</div><div class="stat-label">归母净利润<br>同比+22.43%</div></div>
+      <div class="stat-card"><div class="stat-num">100亿+</div><div class="stat-label">新能源业务营收<br>同比+22.08%</div></div>
+      <div class="stat-card"><div class="stat-num">35%</div><div class="stat-label">车载业务占比<br>（2025H1）</div></div>
+    </div>
+    <h3>5.2 水冷板（液冷）业务占比分析</h3>
+    <div class="callout warn"><strong>⚠️ 说明：</strong>东山精密财报中<strong>未单独披露水冷板/液冷板业务的精确营收和占比</strong>。水冷板属于新能源业务板块下的精密制造产品线之一，与车载PCB、电池结构件等共同构成新能源业务。</div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>信息维度</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>新能源业务产品线</td><td>车载PCB（含FPC）、电池结构件、<strong>液冷板</strong>等</td></tr>
+        <tr><td>新能源业务营收</td><td>2025年超100亿元，同比+22.08%</td></tr>
+        <tr><td>液冷板地位</td><td>"深度渗透全球前五大电动车厂商"</td></tr>
+        <tr><td>海外出货占比</td><td>40%</td></tr>
+        <tr><td>关键客户</td><td><strong>特斯拉</strong>（FPC独家供应商，单车价值1500元）、蔚来、小米</td></tr>
+        <tr><td>GMD收购</td><td>法国GMD公司，拓展散热系统技术能力（2025年完成收购）</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout key"><strong>分析判断：</strong>水冷板（液冷板）目前是东山精密新能源业务中<strong>成长中的细分产品线</strong>，在401亿总营收中占比预计较低（个位数百分比级别），但增速可观。公司通过收购法国GMD整合散热技术、昆山工厂布局钎焊/FSW产线，显示了对该业务的战略重视。<strong>水冷板业务的目标不是短期营收占比，而是抢占20%市场份额的战略卡位</strong>。</div>
+    <h3>5.3 竞争格局</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>企业</th><th>优势领域</th><th>与东山精密的关系</th></tr></thead>
+      <tbody>
+        <tr><td>三花智控</td><td>热管理龙头，2025年汽车热管理营收超百亿</td><td>主要竞争对手</td></tr>
+        <tr><td>银轮股份</td><td>商用车热管理龙头，液冷板/换热器</td><td>主要竞争对手</td></tr>
+        <tr><td>纳百川</td><td>电池液冷板，高度依赖宁德时代</td><td>电池侧竞争</td></tr>
+        <tr><td>飞荣达</td><td>热管理材料及器件</td><td>部分交叉</td></tr>
+        <tr style="background:#f0fdf4"><td><strong>东山精密</strong></td><td><strong>多工艺路线+压铸/CNC/散热全链条+全球交付，特斯拉FPC独家供应商，昆山FSW/钎焊产线已就位，2025年收购法国GMD拓展散热系统</strong></td><td><strong>已切入·需扩大份额</strong></td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout strat"><strong>东山精密差异化优势：</strong>核心壁垒是"精密制造全链条"——钣金、冲压、压铸、CNC、FSW、钎焊、激光焊、测试线一站式能力。昆山工厂已布局液冷板车间（含钎焊线、FSW线、激光焊接线、测试线），墨西哥/盐城基地支撑全球交付，2025年收购法国GMD进一步强化欧洲散热系统能力。</div>
+  </div>
+</div>
+
+<!-- 六、战略方向 -->
+<div class="section" id="strategy">
+  <div class="section-header"><span class="icon" style="background:#dcfce7;color:#15803d">🎯</span><h2>六、战略方向</h2></div>
+  <div class="section-body">
+    <div class="callout strat"><strong>战略总纲：</strong>分离式域控仍将占据很长一段时间的主流地位。东山精密<strong>不应只瞄准"舱驾一体"的钎焊市场，而是要在FSW领域巩固并扩大份额</strong>，将FSW作为业务基本盘和现金流来源，同时以钎焊能力储备迎接未来增量。</div>
+    <h3>6.1 双轨战略：FSW为基，钎焊为翼</h3>
+    <div class="strat-grid">
+      <div class="strat-card s1"><span class="strat-num">基</span><h4>FSW基本盘（当前-2028）</h4><p><strong>目标客群：</strong>国内11家分离式车企+华为系列+海外丰田/本田/大众<br><strong>核心动作：</strong>以成本优势和全链条能力抢占比亚迪/奇瑞/上汽/华为系列等FSW订单<br><strong>预期产出：</strong>贡献70%以上水冷板营收</p></div>
+      <div class="strat-card s3"><span class="strat-num">翼</span><h4>钎焊储备盘（2026-2030）</h4><p><strong>目标客群：</strong>特斯拉/蔚来/零跑/小米/宝马下一代<br><strong>核心动作：</strong>昆山钎焊线+GMD散热技术，深度绑定蔚来/小米/特斯拉后续车型<br><strong>预期产出：</strong>2027后逐步贡献增量</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 七、市场策略 -->
+<div class="section" id="sales">
+  <div class="section-header"><span class="icon" style="background:#fef9c3;color:#a16207">⚔️</span><h2>七、市场策略</h2></div>
+  <div class="section-body">
+    <h3>7.1 夯实能力，创造客户价值</h3>
+    <div class="strat-grid">
+      <div class="strat-card s2"><span class="strat-num">①</span><h4>夯实全链路工艺制造能力</h4><p>确保FSW、钎焊、激光焊、压铸、CNC、测试全链条能力到位，为客户提供从DFM到量产的系统级方案</p></div>
+      <div class="strat-card s2"><span class="strat-num">②</span><h4>提升环保智慧生产能力</h4><p>推进绿色制造、智能化产线建设，满足国际客户（特斯拉/宝马/奔驰等）的ESG和可追溯性要求</p></div>
+      <div class="strat-card s2"><span class="strat-num">③</span><h4>保证质量，补齐短板</h4><p>当前盐城工厂的部分工艺<strong>不满足客户的高标准需求</strong>（洁净度/平面度/检测等级），必须针对性投入升级</p></div>
+      <div class="strat-card s2"><span class="strat-num">④</span><h4>先一只脚跨进去</h4><p>只要材料不亏、有微利就接单，首单的意义是建立合作渠道和沟通机会</p></div>
+      <div class="strat-card s2"><span class="strat-num">⑤</span><h4>从FSW切入低门槛</h4><p>FSW工艺成本低、客户基数大，是最佳切入点</p></div>
+      <div class="strat-card s2"><span class="strat-num">⑥</span><h4>用工程能力换信任</h4><p>用Total Thermal Solution全链条能力换深度绑定，而非拼价格</p></div>
+    </div>
+    <div class="callout value"><strong>💡 核心逻辑：创造客户价值。</strong>东山精密的终极目标不是卖水冷板，而是成为客户热管理问题的系统级解决者——帮客户选最优工艺路线、帮客户降总成本、帮客户缩短开发周期。<strong>谁能为客户创造更多价值，谁就能赢得订单和份额</strong>。</div>
+
+    <h3>7.2 客户分层与切入策略</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>优先级</th><th>客户类型</th><th>代表车企</th><th>工艺</th><th>切入策略</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag tag-red">P0</span></td><td><strong>分离式·大销量/高增长</strong></td><td>比亚迪、奇瑞、上汽、华为系列</td><td><span class="tag tag-fsw">FSW</span></td><td>销量大/增长快，微利也要进</td></tr>
+        <tr><td><span class="tag tag-yellow">P1</span></td><td><strong>分离式·中销量</strong></td><td>长城/长安/广汽/吉利/大众(中国)/丰田</td><td><span class="tag tag-fsw">FSW</span></td><td>适合建立标杆案例</td></tr>
+        <tr><td><span class="tag tag-yellow">P1</span></td><td><strong>舱驾一体·深度绑定</strong></td><td><strong>蔚来、小米、特斯拉</strong></td><td><span class="tag tag-braze">钎焊</span></td><td><strong>深度绑定后续车型，横向拓展产品线</strong></td></tr>
+        <tr><td><span class="tag tag-gray">P2</span></td><td><strong>过渡型</strong></td><td>问界(华为)、宝马</td><td><span class="tag tag-fsw">FSW</span>→<span class="tag tag-braze">钎焊</span></td><td>先FSW切入，随升级衔接</td></tr>
+        <tr><td><span class="tag tag-gray">P2</span></td><td><strong>日系客户</strong></td><td><strong>丰田/本田（关注，先从电装切入）</strong></td><td><span class="tag tag-fsw">FSW</span></td><td>跟踪日系智能化进展，先建立电装合作</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>7.3 渠道策略：多维触达</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>渠道类型</th><th>目标客户</th><th>策略</th></tr></thead>
+      <tbody>
+        <tr><td><strong>国内直拓</strong></td><td>比亚迪/奇瑞/上汽/蔚来/小米等国内车企</td><td>销售团队直接对接主机厂和域控Tier1</td></tr>
+        <tr><td><strong>欧洲双线接触</strong></td><td>宝马/奔驰/大众等欧洲车企</td><td><strong>从欧洲分公司（GMD）和国内两头分别接触</strong>，欧洲端对接总部技术决策，国内端对接中国本土项目</td></tr>
+        <tr><td><strong>国际Tier1渠道</strong></td><td>大陆集团/法雷奥(Valeo)/博世等</td><td><strong>通过国际Tier1切入供应链</strong>，Tier1是域控水冷板的直接采购方，与Tier1建立合作可间接覆盖多家车企</td></tr>
+        <tr><td><strong>日系客户</strong></td><td>丰田/本田</td><td><strong>先从电装(Denso)切入</strong>，电装是日系核心Tier1，通过电装建立合作后可辐射丰田/本田</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>7.4 深度绑定客户策略</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>客户</th><th>现有合作基础</th><th>深度绑定策略</th><th>横向拓展方向</th></tr></thead>
+      <tbody>
+        <tr><td><strong>特斯拉</strong></td><td>FPC独家供应商，单车价值1500元</td><td>从FPC延伸至水冷板/散热模组</td><td>扩展至更多热管理零部件</td></tr>
+        <tr><td><strong>蔚来</strong></td><td>ADAM中央计算平台钎焊水冷板</td><td><strong>深度绑定蔚来后续车型</strong>（NT3.0等下一代平台）</td><td>从水冷板扩展至整车热管理方案</td></tr>
+        <tr><td><strong>小米</strong></td><td>YU7起使用钎焊水冷板</td><td>从YU7水冷板切入，绑定后续SU7/YU系列</td><td>横向拓展至小米车载PCB/结构件/散热全链条</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout key"><strong>核心逻辑：</strong>特斯拉、蔚来、小米三家已采用钎焊工艺的舱驾一体客户，东山精密采取<strong>深度绑定+横向拓展</strong>策略——从单一产品切入后快速横向拓展，成为其<strong>热管理+精密制造的综合供应商</strong>，而非单一水冷板供应商。</div>
+  </div>
+</div>
+
+<!-- 八、客户档案 -->
+<div class="section" id="customer">
+  <div class="section-header"><span class="icon" style="background:#fce7f3;color:#be185d">📋</span><h2>八、客户档案建设</h2></div>
+  <div class="section-body">
+    <div class="callout key"><strong>核心要求：</strong>建立<strong>"主机厂→品牌→车型→域控架构→芯片方案→水冷板工艺需求"</strong>详细档案，<strong>至少每季度更新一次</strong>。覆盖国内外21家车企及重点Tier1（电装/大陆/法雷奥/博世）。</div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>字段</th><th>说明</th><th>示例</th></tr></thead>
+      <tbody>
+        <tr><td>主机厂</td><td>集团名称</td><td>比亚迪</td></tr>
+        <tr><td>品牌</td><td>旗下品牌</td><td>王朝/海洋/腾势/仰望</td></tr>
+        <tr><td>车型</td><td>具体车型及年款</td><td>汉EV 2025款</td></tr>
+        <tr><td>域控架构</td><td>分离式/舱驾一体</td><td>分离式</td></tr>
+        <tr><td>座舱芯片</td><td>SoC型号+算力</td><td>高通8295</td></tr>
+        <tr><td>智驾芯片</td><td>SoC型号+算力</td><td>双Orin-X，508 TOPS</td></tr>
+        <tr><td>水冷板工艺需求</td><td>FSW/钎焊</td><td>FSW</td></tr>
+        <tr><td>舱驾一体规划</td><td>时间表</td><td>2027+（璇玑A3）</td></tr>
+        <tr><td>东山接触状态</td><td>未接触/初步/报价/定点</td><td>初步接触</td></tr>
+        <tr><td>更新时间</td><td>最近更新</td><td>2026 Q3</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<!-- 九、目标设定 -->
+<div class="section" id="goal">
+  <div class="section-header"><span class="icon" style="background:#f1f5f9;color:#475569">🏁</span><h2>九、目标设定</h2></div>
+  <div class="section-body">
+    <div class="callout strat"><strong>战略目标：</strong>东山精密在汽车水冷板市场（无论何种工艺）占据<strong>至少20%的市场份额</strong>，成为专业的<strong>系统性解决方案引领者</strong>。</div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>维度</th><th>当前</th><th>阶段目标（2026-2027）</th><th>战略目标（2028+）</th></tr></thead>
+      <tbody>
+        <tr><td><strong>整体市场份额</strong></td><td>已切入·待扩大</td><td>5-10%</td><td><strong>≥20%</strong></td></tr>
+        <tr><td><strong>FSW市场份额</strong></td><td>待建立</td><td>10-15%</td><td><strong>≥25%</strong></td></tr>
+        <tr><td><strong>钎焊市场份额</strong></td><td>产线已就位</td><td>3-5%</td><td><strong>≥15%</strong></td></tr>
+        <tr><td><strong>覆盖车企数</strong></td><td>特斯拉/蔚来/小米等</td><td>5-8家</td><td><strong>10+家深度合作</strong></td></tr>
+        <tr><td><strong>定位</strong></td><td>制造供应商</td><td>方案+制造</td><td><strong>系统性解决方案引领者</strong></td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout value"><strong>"系统性解决方案引领者" = 创造客户价值：</strong><br>• <strong>全链条能力</strong>：热仿真→DFM→压铸/CNC→FSW/钎焊/激光焊→测试→全球交付<br>• <strong>多工艺路线</strong>：不站队单一工艺，帮客户选最优路线<br>• <strong>前瞻判断</strong>：基于域控架构演进趋势，提前为客户预判工艺切换节点<br>• <strong>品质保障</strong>：补齐盐城工厂工艺短板，品质能力匹配头部客户高标准<br>• <strong>数据驱动</strong>：客户档案+架构跟踪+工艺需求校准</div>
+  </div>
+</div>
+
+<!-- 十、行动建议 -->
+<div class="section" id="action">
+  <div class="section-header"><span class="icon" style="background:#dcfce7;color:#15803d">✅</span><h2>十、行动建议</h2></div>
+  <div class="section-body">
+    <div class="table-wrap"><table>
+      <thead><tr><th>优先级</th><th>行动项</th><th>负责部门</th><th>时间</th><th>验收标准</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag tag-red">P0</span></td><td><strong>启动客户档案体系建设</strong>（含海外车企+Tier1）</td><td>销售+市场</td><td>2026 Q3</td><td>国内外20+家及重点Tier1覆盖</td></tr>
+        <tr><td><span class="tag tag-red">P0</span></td><td><strong>调整销售策略与考核</strong></td><td>销售管理层</td><td>2026 Q3</td><td>新考核方案执行</td></tr>
+        <tr><td><span class="tag tag-red">P0</span></td><td><strong>盐城工厂工艺短板升级</strong>：洁净度/平面度/检测等级达标</td><td>工程+品质</td><td>2026 Q3-Q4</td><td>通过头部客户审核</td></tr>
+        <tr><td><span class="tag tag-yellow">P1</span></td><td><strong>重点攻坚比亚迪/奇瑞/上汽/华为系列FSW订单</strong></td><td>销售+FAE</td><td>2026 Q3-Q4</td><td>至少1家进入报价</td></tr>
+        <tr><td><span class="tag tag-yellow">P1</span></td><td><strong>深度绑定蔚来/小米/特斯拉后续车型</strong>，横向拓展产品线</td><td>销售+工程</td><td>2026 Q3-Q4</td><td>完成下一代车型技术对接</td></tr>
+        <tr><td><span class="tag tag-yellow">P1</span></td><td><strong>启动欧洲双线接触</strong>：GMD对接宝马/奔驰/大众总部</td><td>欧洲(GMD)+国内销售</td><td>2026 Q3-Q4</td><td>建立欧洲客户技术沟通渠道</td></tr>
+        <tr><td><span class="tag tag-yellow">P1</span></td><td><strong>接触国际Tier1</strong>：大陆集团/法雷奥/博世</td><td>销售+BD</td><td>2026 Q3-Q4</td><td>至少1家Tier1建立技术交流</td></tr>
+        <tr><td><span class="tag tag-gray">P2</span></td><td><strong>接触电装(Denso)</strong>，切入日系供应链</td><td>销售+BD</td><td>2026 Q4</td><td>建立电装技术沟通</td></tr>
+        <tr><td><span class="tag tag-gray">P2</span></td><td>建立季度更新机制</td><td>市场部</td><td>2026 Q4</td><td>首份季度报告</td></tr>
+        <tr><td><span class="tag tag-gray">P2</span></td><td>编制销售话术手册</td><td>市场+产品</td><td>2026 Q4</td><td>手册发布+培训</td></tr>
+        <tr><td><span class="tag tag-gray">P2</span></td><td>20%份额路径规划</td><td>战略部</td><td>2027 Q1</td><td>3年路线图评审</td></tr>
+        <tr><td><span class="tag tag-gray">P2</span></td><td>推进环保智慧生产线建设</td><td>工程部</td><td>2027 Q1</td><td>满足国际客户ESG要求</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout value"><strong>最后强调：</strong>水冷板业务的突破口不在于"等舱驾一体市场成熟"，而在于<strong>立即行动、先切入FSW基本盘、用工程能力建立客户信任、随客户架构演进自然升维</strong>。20%份额目标不是等来的，是一家一家客户谈出来的。<strong>东山精密的终极竞争力是创造客户价值——帮客户解决热管理问题，而非卖水冷板零件</strong>。</div>
+  </div>
+</div>
+
+<!-- 附录 -->
+<div class="section" id="appendix">
+  <div class="section-header"><span class="icon" style="background:#f8fafc;color:#64748b">📚</span><h2>附录：资料来源</h2></div>
+  <div class="section-body">
+    <div class="table-wrap"><table>
+      <thead><tr><th>来源</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>东山精密2025年度业绩快报/半年报</td><td>营收401.25亿/新能源超100亿/车载占比35%</td></tr>
+        <tr><td>《国内主流车企智能座舱与智驾域控发展现状及规划报告》</td><td>14家国内车企域控详细数据</td></tr>
+        <tr><td>《东山精密汽车中央域控制器水冷板工艺专题培训报告》</td><td>FSW vs 钎焊工艺对比</td></tr>
+        <tr><td>NVIDIA/NIO/小米/Mercedes-Benz/BMW等公开资料</td><td>算力/架构数据</td></tr>
+        <tr><td>CARIAD+地平线酷睿程合作公告</td><td>大众智驾芯片规划</td></tr>
+        <tr><td>高通汽车技术与合作峰会</td><td>8775单芯片舱驾融合/宝马合作</td></tr>
+        <tr><td>中商产业研究院/行业公开报告</td><td>域控市场/水冷板竞争格局</td></tr>
+        <tr><td>DSBJ公司简介</td><td>昆山工厂产线布局</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout warn"><strong>⚠️ 免责声明：</strong>水冷板业务占比为基于财报公开信息的分析推算，公司未单独披露。市场份额为基于域控架构分布的推算，非精确统计。成本倍数为培训口径，实际以项目BOM为准。</div>
+  </div>
+</div>
+
+</div>
+
+<footer class="footer">
+  <p><strong>东山精密</strong> · 汽车水冷板业务发展趋势报告</p>
+  <p style="margin-top:.3rem;opacity:.5">内部机密 · 限管理层传阅 · 大象咨询出品 · 2026年Q3-Q4</p>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="返回顶部">↑</button>
+<script>
+window.addEventListener('scroll',function(){document.getElementById('backTop').classList.toggle('visible',window.scrollY>600)});
+var sections=document.querySelectorAll('.section[id]'),navLinks=document.querySelectorAll('.nav-inner a');
+window.addEventListener('scroll',function(){var current='';sections.forEach(function(s){if(window.scrollY>=s.offsetTop-120)current=s.getAttribute('id')});navLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+current)})});
+navLinks.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var id=this.getAttribute('href').substring(1),el=document.getElementById(id);if(el)window.scrollTo({top:el.offsetTop-80,behavior:'smooth'})})});
+</script>
+</body>
+</html>

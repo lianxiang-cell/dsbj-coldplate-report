@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="国内主流车企智能座舱与智能驾驶域控制器发展现状及规划报告 - 大象咨询出品">
+<title>国内主流车企智能座舱与智驾域控报告 | 大象咨询</title>
+<style>
+/* ===== CSS Reset & Variables ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c-primary:#0a1628;
+  --c-accent:#2563eb;
+  --c-accent2:#7c3aed;
+  --c-gold:#f59e0b;
+  --c-green:#10b981;
+  --c-red:#ef4444;
+  --c-bg:#f8fafc;
+  --c-surface:#ffffff;
+  --c-border:#e2e8f0;
+  --c-text:#1e293b;
+  --c-text2:#64748b;
+  --c-text3:#94a3b8;
+  --radius:12px;
+  --shadow-sm:0 1px 3px rgba(0,0,0,.06);
+  --shadow:0 4px 24px rgba(0,0,0,.08);
+  --shadow-lg:0 12px 48px rgba(0,0,0,.12);
+  --max-w:1200px;
+  --font-mono:'SF Mono','Cascadia Code','JetBrains Mono',monospace;
+  --font-sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:var(--font-sans);
+  background:var(--c-bg);
+  color:var(--c-text);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ===== Typography ===== */
+h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;letter-spacing:-.02em}
+h2{font-size:clamp(1.25rem,3vw,1.75rem);font-weight:700;letter-spacing:-.01em}
+h3{font-size:clamp(1.1rem,2.5vw,1.35rem);font-weight:700}
+h4{font-size:1.05rem;font-weight:600}
+a{color:var(--c-accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ===== Hero Section ===== */
+.hero{
+  background:linear-gradient(135deg,var(--c-primary) 0%,#1a2a5e 40%,#0f2744 100%);
+  color:#fff;
+  padding:clamp(2rem,6vw,4rem) clamp(1rem,5vw,2rem);
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-20%;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(37,99,235,.15) 0%,transparent 70%);
+  border-radius:50%;
+  pointer-events:none;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:-30%;left:-10%;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(124,58,237,.1) 0%,transparent 70%);
+  border-radius:50%;
+  pointer-events:none;
+}
+.hero-inner{max-width:var(--max-w);margin:0 auto;position:relative;z-index:1}
+.hero-badge{
+  display:inline-block;
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:99px;
+  padding:6px 18px;
+  font-size:.85rem;
+  font-weight:500;
+  letter-spacing:.04em;
+  margin-bottom:1.2rem;
+}
+.hero h1{margin-bottom:.5rem;line-height:1.25}
+.hero-subtitle{
+  font-size:clamp(.95rem,2vw,1.15rem);
+  opacity:.78;
+  margin-bottom:1.5rem;
+  max-width:720px;
+}
+.hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem 2rem;
+  font-size:.85rem;
+  opacity:.7;
+}
+.hero-meta span{display:flex;align-items:center;gap:.4rem}
+.hero-producer{
+  margin-top:1.5rem;
+  padding-top:1rem;
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:.9rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.hero-producer strong{font-size:1.05rem;color:var(--c-gold);letter-spacing:.03em}
+
+/* ===== Navigation ===== */
+.nav-bar{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.85);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--c-border);
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav-bar::-webkit-scrollbar{display:none}
+.nav-inner{
+  max-width:var(--max-w);
+  margin:0 auto;
+  display:flex;
+  gap:.15rem;
+  padding:.4rem 1rem;
+}
+.nav-inner a{
+  white-space:nowrap;
+  padding:.45rem .85rem;
+  border-radius:8px;
+  font-size:.8rem;
+  font-weight:500;
+  color:var(--c-text2);
+  transition:all .2s;
+}
+.nav-inner a:hover,.nav-inner a.active{
+  background:var(--c-accent);
+  color:#fff;
+  text-decoration:none;
+}
+
+/* ===== Layout ===== */
+.container{max-width:var(--max-w);margin:0 auto;padding:2rem 1rem}
+
+/* ===== Section Cards ===== */
+.section{
+  background:var(--c-surface);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+  margin-bottom:1.5rem;
+  overflow:hidden;
+  border:1px solid var(--c-border);
+}
+.section-header{
+  padding:1.2rem 1.5rem;
+  border-bottom:1px solid var(--c-border);
+  display:flex;align-items:center;gap:.7rem;
+  background:#fafbfc;
+}
+.section-header .icon{
+  width:36px;height:36px;
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;
+}
+.section-body{padding:1.5rem}
+.section-body > * + *{margin-top:1rem}
+
+/* ===== Highlight Boxes ===== */
+.highlight-box{
+  background:linear-gradient(135deg,#eff6ff,#f0f9ff);
+  border-left:4px solid var(--c-accent);
+  border-radius:0 var(--radius) var(--radius) 0;
+  padding:1rem 1.2rem;
+  font-size:.92rem;
+  margin:1rem 0;
+}
+.highlight-box.warn{
+  background:linear-gradient(135deg,#fffbeb,#fefce8);
+  border-left-color:var(--c-gold);
+}
+.highlight-box.insight{
+  background:linear-gradient(135deg,#f5f3ff,#faf5ff);
+  border-left-color:var(--c-accent2);
+}
+
+/* ===== Tables ===== */
+.table-wrap{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  border:1px solid var(--c-border);
+  border-radius:var(--radius);
+  margin:1rem 0;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:.88rem;
+  min-width:700px;
+}
+thead{background:linear-gradient(135deg,var(--c-primary),#1a2a5e);color:#fff}
+thead th{
+  padding:.7rem .85rem;
+  text-align:left;
+  font-weight:600;
+  font-size:.8rem;
+  letter-spacing:.02em;
+  white-space:nowrap;
+}
+tbody td{
+  padding:.65rem .85rem;
+  border-bottom:1px solid var(--c-border);
+  vertical-align:top;
+}
+tbody tr:nth-child(even){background:#f8fafc}
+tbody tr:hover{background:#eff6ff}
+.tag{
+  display:inline-block;
+  padding:2px 10px;
+  border-radius:99px;
+  font-size:.75rem;
+  font-weight:600;
+  white-space:nowrap;
+}
+.tag-blue{background:#dbeafe;color:#1d4ed8}
+.tag-green{background:#d1fae5;color:#065f46}
+.tag-yellow{background:#fef3c7;color:#92400e}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-purple{background:#ede9fe;color:#6d28d9}
+.tag-gray{background:#f1f5f9;color:#475569}
+
+/* ===== Tier Cards ===== */
+.tier-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1rem;
+  margin:1rem 0;
+}
+.tier-card{
+  border-radius:var(--radius);
+  padding:1.2rem;
+  border:1px solid var(--c-border);
+  position:relative;
+  overflow:hidden;
+}
+.tier-card.tier1{background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-color:#bbf7d0}
+.tier-card.tier2{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#bfdbfe}
+.tier-card.tier3{background:linear-gradient(135deg,#f8fafc,#f1f5f9);border-color:#e2e8f0}
+.tier-card .tier-badge{
+  position:absolute;top:0;right:0;
+  padding:4px 14px;
+  font-size:.75rem;font-weight:700;
+  border-radius:0 0 0 var(--radius);
+}
+.tier-card.tier1 .tier-badge{background:var(--c-green);color:#fff}
+.tier-card.tier2 .tier-badge{background:var(--c-accent);color:#fff}
+.tier-card.tier3 .tier-badge{background:var(--c-text3);color:#fff}
+.tier-card ul{list-style:none;padding:0;margin-top:.8rem}
+.tier-card li{padding:.35rem 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:.88rem}
+.tier-card li:last-child{border-bottom:none}
+
+/* ===== Stat Grid ===== */
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;
+  margin:1rem 0;
+}
+.stat-card{
+  background:var(--c-surface);
+  border:1px solid var(--c-border);
+  border-radius:var(--radius);
+  padding:1.2rem;
+  text-align:center;
+}
+.stat-card .stat-num{
+  font-size:2rem;
+  font-weight:800;
+  background:linear-gradient(135deg,var(--c-accent),var(--c-accent2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.stat-card .stat-label{font-size:.82rem;color:var(--c-text2);margin-top:.3rem}
+
+/* ===== Accordion ===== */
+.accordion{border:1px solid var(--c-border);border-radius:var(--radius);overflow:hidden;margin:1rem 0}
+.accordion-header{
+  padding:.9rem 1.2rem;
+  background:#fafbfc;
+  cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  font-weight:600;
+  user-select:none;
+  border-bottom:1px solid transparent;
+  transition:all .2s;
+}
+.accordion-header:hover{background:#f1f5f9}
+.accordion-header.open{border-bottom-color:var(--c-border);background:#f1f5f9}
+.accordion-header::after{content:'▸';font-size:.85rem;transition:transform .25s;color:var(--c-text3)}
+.accordion-header.open::after{transform:rotate(90deg)}
+.accordion-body{display:none;padding:1.2rem}
+.accordion-body.show{display:block}
+.accordion-body table{min-width:100%}
+
+/* ===== Footer ===== */
+.footer{
+  background:var(--c-primary);
+  color:rgba(255,255,255,.7);
+  text-align:center;
+  padding:2rem 1rem;
+  margin-top:3rem;
+  font-size:.85rem;
+}
+.footer strong{color:var(--c-gold)}
+.footer-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin:.8rem 0}
+.footer a{color:rgba(255,255,255,.6)}
+.footer a:hover{color:#fff}
+
+/* ===== Back to Top ===== */
+.back-top{
+  position:fixed;bottom:24px;right:24px;
+  width:44px;height:44px;
+  background:var(--c-accent);
+  color:#fff;
+  border:none;border-radius:50%;
+  font-size:1.2rem;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+  opacity:0;transform:translateY(20px);
+  transition:all .3s;
+  z-index:99;
+}
+.back-top.visible{opacity:1;transform:translateY(0)}
+.back-top:hover{background:var(--c-accent2);transform:translateY(-3px)}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  .section-body{padding:1rem}
+  .section-header{padding:.9rem 1rem}
+  .tier-grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-meta{flex-direction:column;gap:.3rem}
+  .nav-inner a{font-size:.75rem;padding:.35rem .6rem}
+  table{font-size:.78rem}
+  thead th{font-size:.7rem;padding:.5rem .6rem}
+  tbody td{font-size:.76rem;padding:.5rem .6rem}
+}
+
+/* Print */
+@media print{
+  .nav-bar,.back-top,.footer{display:none}
+  .section{break-inside:avoid;box-shadow:none;border:1px solid #ddd}
+  body{background:#fff}
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.section{animation:fadeInUp .5s ease both}
+.section:nth-child(2){animation-delay:.05s}
+.section:nth-child(3){animation-delay:.1s}
+.section:nth-child(4){animation-delay:.15s}
+.section:nth-child(5){animation-delay:.2s}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">📊 市场调研与竞品分析</div>
+    <h1>国内主流车企智能座舱与<br>智能驾驶域控制器发展现状及规划报告</h1>
+    <p class="hero-subtitle">覆盖14家主流车企 · 深度拆解座舱/智驾方案 · 舱驾一体趋势研判 · 芯片供应链格局</p>
+    <div class="hero-meta">
+      <span>📅 调研时间：2026年6月</span>
+      <span>📋 数据截止：2025年量产车型 + 2026年已公布规划</span>
+      <span>🎯 目标受众：产品规划 / 技术战略 / 管理层决策</span>
+    </div>
+    <div class="hero-producer">
+      出品人：<strong>大象咨询</strong>
+    </div>
+  </div>
+</header>
+
+<!-- ===== NAV ===== -->
+<nav class="nav-bar" id="navBar">
+  <div class="nav-inner">
+    <a href="#summary">核心发现</a>
+    <a href="#carmakers">车企详情</a>
+    <a href="#comparison">对比总表</a>
+    <a href="#tiers">舱驾一体分级</a>
+    <a href="#chips">芯片格局</a>
+    <a href="#trends">趋势判断</a>
+    <a href="#advice">建议动作</a>
+    <a href="#sources">资料来源</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ===== 一、调研背景 ===== -->
+<div class="section" id="background">
+  <div class="section-header">
+    <span class="icon" style="background:#dbeafe;color:#2563eb">📋</span>
+    <h2>一、调研背景与目标</h2>
+  </div>
+  <div class="section-body">
+    <p>随着汽车电子电气（E/E）架构从分布式向<strong>集中式</strong>演进，域控制器成为智能汽车的核心竞争高地。行业正在经历三个关键转变：</p>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">①</div>
+        <div class="stat-label"><strong>架构集中化</strong><br>分布式 → 域集中 → 中央计算平台(CCU)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">②</div>
+        <div class="stat-label"><strong>舱驾融合化</strong><br>分离式 → One Board → One Chip</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">③</div>
+        <div class="stat-label"><strong>芯片自主化</strong><br>英伟达/高通 → 自研芯片</div>
+      </div>
+    </div>
+    <div class="highlight-box">
+      <strong>⚠️ 不确定性声明：</strong>部分信息来源于公开渠道，具体技术参数和规划时间线可能因车型配置、市场策略调整而变化。自研芯片的实际量产时间存在较大不确定性。
+    </div>
+  </div>
+</div>
+
+<!-- ===== 二、核心发现 ===== -->
+<div class="section" id="summary">
+  <div class="section-header">
+    <span class="icon" style="background:#d1fae5;color:#065f46">💡</span>
+    <h2>二、核心发现 (Executive Summary)</h2>
+  </div>
+  <div class="section-body">
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">90%+</div>
+        <div class="stat-label">量产车型仍为分离式架构</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2家</div>
+        <div class="stat-label">已量产舱驾融合（蔚来/零跑）</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3家</div>
+        <div class="stat-label">自研智驾芯片已量产/流片</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">14家</div>
+        <div class="stat-label">本次调研覆盖车企总数</div>
+      </div>
+    </div>
+    <h3>关键发现</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>发现</th><th>详细说明</th></tr></thead>
+        <tbody>
+          <tr><td>高通8295成座舱标配</td><td>8295/8295P是2024-2025年旗舰车型座舱首选芯片</td></tr>
+          <tr><td>英伟达Orin-X主导高阶智驾</td><td>双Orin-X（508 TOPS）是高阶智驾主流方案</td></tr>
+          <tr><td>地平线征程系列快速崛起</td><td>征程5/6M/6P在中阶智驾市场渗透率极高</td></tr>
+          <tr><td>零跑已实现四域合一</td><td>四叶草架构将座舱/智驾/动力/车身融合为中央计算平台</td></tr>
+          <tr><td>蔚来率先量产舱驾融合</td><td>2024款二代平台已升级为ADAM中央计算平台（One Board）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 三、车企详情 ===== -->
+<div class="section" id="carmakers">
+  <div class="section-header">
+    <span class="icon" style="background:#fef3c7;color:#92400e">🏭</span>
+    <h2>三、各车企智能座舱与智驾域控详细分析</h2>
+  </div>
+  <div class="section-body">
+
+    <!-- 比亚迪 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.1 比亚迪 — 璇玑架构 · 天神之眼ABC · 璇玑A3芯片规划中</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>璇玑架构（2024.1发布），"一脑、两端、三网、四链"</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>DiLink智能座舱系统；高端（腾势/仰望）高通8295；中低端高通8155/6125</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>DiLink OS（基于Android深度定制）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>天神之眼A（三激光+双Orin-X，仰望） / B（激光+单/双Orin-X，腾势/汉唐） / C（纯视觉+征程5/J6M，王朝/海洋）</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>英伟达Orin-X（高阶）、地平线征程5/J6M（中低阶）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式</span> 已申请舱驾融合专利 CN121763694A</td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>璇玑A3芯片（4nm，>700 TOPS）预计2027年首搭腾势新车</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>璇玑A3（4nm智驾芯片，已流片）；座舱芯片在研</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>比亚迪"量大面广"策略清晰——高端用英伟达+高通，中低端用地平线+高通。舱驾一体是远期方向（2027+），短期内分离式架构仍为主力。</div>
+      </div>
+    </div>
+
+    <!-- 吉利 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.2 吉利汽车 — 千里浩瀚 · 亿咖通龙鹰一号 · 安托拉1000 SPB</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>极氪中央计算平台，银河系列域控架构</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>极氪：高通8295+ZEEKR OS；银河/领克：亿咖通+龙鹰一号（7nm国产）/高通8155；Flyme Auto</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>ZEEKR OS / Flyme Auto / 亿咖通GKUI</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>千里浩瀚 H1-H9 分级（2025.3发布），H1-H3用地平线征程6M，H9面向L3</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>地平线征程6M（H1/H3）、英伟达Orin-X/Thor（高阶）、Mobileye（早期）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式为主</span> 亿咖通已实现单芯片"舱行泊一体"（龙鹰一号，2025.4验证）</td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>安托拉1000 SPB单芯片舱行泊一体已验证；极氪CES 2025宣布与高通合作布局</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>龙鹰一号（7nm座舱，已量产）；AD1000（7nm智驾，250+ TOPS）</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>吉利通过亿咖通+芯擎布局芯片自主化，龙鹰一号已大规模上车。舱驾融合进展领先，但各品牌方案离散度较高，正通过"千里浩瀚"统一智驾战略。</div>
+      </div>
+    </div>
+
+    <!-- 长城 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.3 长城汽车 — Coffee OS 3 · Coffee Pilot Ultra · 开放合作转向</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>GEEP架构（3.0/4.0），向中央计算演进</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>Coffee OS 3（2024.6发布，全栈自研），高通8295</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>CP Ultra（无图全场景NOA，元戎启行合作）/ CP Pro/Base</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>英伟达Orin-X（高阶）；地平线征程系列（中阶）；Momenta新定点</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式</span></td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>暂未公布明确量产时间表</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>无；毫末智行（关联公司）自研域控但芯片依赖外部</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>长城智驾策略从"自研为主"转向"开放合作"——引入元戎启行（无图NOA）、Momenta（新定点），自研路线遇阻后的务实转向。舱驾一体布局相对滞后。</div>
+      </div>
+    </div>
+
+    <!-- 长安 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.4 长安汽车 — 华为鸿蒙+ADS / 深蓝自研 · 德赛西威战略合作</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>域集中式架构（深蓝平台），向中央计算演进</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>阿维塔：华为鸿蒙座舱；深蓝：高通8155+华阳域控/德赛西威；启源：高通8155</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>鸿蒙OS（阿维塔）/ Deepal OS（深蓝自研）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>阿维塔：华为ADS 3.0（3激光雷达+MDC）；深蓝：自研+地平线征程</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>华为昇腾（阿维塔MDC）、地平线征程（深蓝）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式</span></td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>2026.4与德赛西威达成深度战略合作，涵盖座舱域控及舱驾融合</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>暂无公开信息</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>长安"双轨策略"——阿维塔深度绑定华为全栈，深蓝/启源走自主+供应商路线。与德赛西威战略合作预示舱驾融合加速布局。</div>
+      </div>
+    </div>
+
+    <!-- 蔚来 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.5 蔚来汽车 ⭐ — ADAM中央计算平台 · 神玑NX9031 · SkyOS天枢</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td><span class="tag tag-green">中央计算平台ADAM</span>（2024款二代平台升级）</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>高通8295（NT2.0平台），自研座舱软件</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>SkyOS·天枢（2024.7发布，整车全域操作系统）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>NIO NAD，全栈自研算法</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>4×Orin-X（1016 TOPS）→ 神玑NX9031（5nm自研，ET9首发，2025.4量产）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-green">舱驾融合 One Board</span> 座舱芯片和智驾芯片焊在同一块板上</td></tr>
+            <tr><td><strong>舱驾一体进展</strong></td><td><strong>行业领先</strong>：2024年2月即宣布升级，已量产</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>神玑NX9031（5nm智驾芯片，已量产）；杨戬（ISP芯片）</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>蔚来在舱驾融合和芯片自研方面均处于行业领先地位。ADAM已量产，神玑NX9031是全球首颗量产上车的5nm车规智驾芯片。SkyOS天枢是唯一实现整车全域操作系统量产的国产方案。</div>
+      </div>
+    </div>
+
+    <!-- 小鹏 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.6 小鹏汽车 — XNGP · XOS天玑 · 图灵AI芯片</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>XEEA 4.0电子电气架构，中央计算平台方向</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>高通8295（G9/X9等旗舰），自研座舱软件</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>XOS天玑系统（AI驱动，2024.7全量推送）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>XNGP（全栈自研，端到端大模型），"全国都好用"</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>双Orin-X → 小鹏图灵AI芯片（自研，2024.8流片，2025 Q2量产上车）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式</span> XEEA 4.0向中央计算演进</td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>图灵芯片定位"多端通用AI芯片"，可同时满足智驾与智舱需求</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>图灵AI芯片（700+ TOPS，2025 Q2量产，国内首款量产的高性能自研智驾芯片）</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>小鹏"软件定义硬件"能力突出——XNGP全场景智驾体验领先。图灵芯片是重要战略支点，为舱驾一体提供了"One Chip"的硬件可能性。但目前仍是分离式架构。</div>
+      </div>
+    </div>
+
+    <!-- 理想 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.7 理想汽车 — 高通8797 Elite首发 · 马赫M100 · AD Max/Pro</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>LEEA 3.0架构（中央计算平台CCU方向）</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>高通8295 → 高通8797 Elite（2026款L9全球首发）；自研马赫M100 AI芯片</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>理想同学（AI大模型驱动），Livis智能体系统（2026）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>AD Max（端到端+VLM）/ AD Pro（纯视觉）</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>AD Max：双Orin-X；AD Pro：地平线征程5</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式</span></td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>LEEA 3.0架构向CCU集中化演进</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>马赫M100（座舱AI芯片）；智驾芯片在研中</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>理想在座舱体验上投入极大——2026款L9全球首发高通8797 Elite。智驾芯片仍依赖外部，舱驾融合节奏偏慢，更注重座舱体验差异化。</div>
+      </div>
+    </div>
+
+    <!-- 问界 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.8 问界/鸿蒙智行 — 华为全栈 · 麒麟+昇腾 · 鸿蒙座舱+ADS</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>华为CCA架构（计算+通信），中央计算方向</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>华为鸿蒙座舱（HarmonyOS），麒麟芯片（9610A/新一代）</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>HarmonyOS（鸿蒙座舱）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>华为乾崑ADS（ADS 2.0 → 3.0 → 4.0）</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>华为昇腾（MDC域控制器），自研</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式</span> 华为正推进舱驾融合计算平台</td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>下一代CCU中央计算平台，预计2026-2027年搭载问界新车型</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>华为全栈自研（麒麟座舱芯片 + 昇腾智驾芯片）</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>华为全栈方案标杆——从芯片到OS到域控全部自研。鸿蒙生态跨设备协同是差异化优势。舱驾融合技术已储备，等待合适量产时机。</div>
+      </div>
+    </div>
+
+    <!-- 小米 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.9 小米汽车 — HyperOS · 骁龙8 Gen3上车 · 四合一域控</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>新一代EEA（2026款SU7升级为四合一域控模块）</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>高通8295（SU7）→ 第三代骁龙8移动平台（YU7，4nm消费级芯片，行业首次上车）</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>HyperOS（澎湃OS，手机/车机/家居全生态打通）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>Xiaomi Pilot（全栈自研），端到端大模型</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>双英伟达Orin-X（SU7 Max，508 TOPS）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td>SU7当前：<span class="tag tag-yellow">分离式</span>；2026款：<span class="tag tag-blue">四合一域控</span></td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>2026款SU7四合一域控模块（ADD+DCD+T-Box+VCCD融合）</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>澎湃系列芯片（消费级积累），车规级自研规划中</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>小米"人车家全生态"是独特优势（HyperOS打通）。2026款SU7的四合一域控标志着从分离式向集中式的关键跃迁。使用消费级芯片上车YU7存在车规可靠性争议。</div>
+      </div>
+    </div>
+
+    <!-- 零跑 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.10 零跑汽车 ⭐ — 四叶草架构 · 四域合一 · 双骁龙至尊版</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td><span class="tag tag-green">四叶草架构</span>（中央集成式，座舱/智驾/动力/车身四域合一）</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>高通8295（C10/C11/C16等车型）</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>Leapmotor OS（自研）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>Leapmotor Pilot（自研），L2到城区NOA覆盖</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>英伟达Orin-X（高阶）/ 地平线征程（中阶）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-green">四域合一中央计算平台</span>（行业领先）</td></tr>
+            <tr><td><strong>舱驾一体进展</strong></td><td>2026 CES发布全球首款双骁龙至尊版中央域控制器，四域统一整合</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>暂无，与高通深度合作</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>零跑在域控架构集成度上是"行业最激进"——四叶草架构已量产，2026 CES展示的四域合一中央域控代表舱驾一体最高水平。但芯片层面完全依赖高通。</div>
+      </div>
+    </div>
+
+    <!-- 上汽 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.11 上汽集团 — 零束全栈3.0 · 智己IM AD · Momenta深度绑定</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>零束全栈3.0架构（两个高性能计算单元HPC），向中央计算演进</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>智己：高通8295+自研；飞凡/荣威：高通8155</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>零束银河OS（自研）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>智己IM AD 3.0（Momenta联合开发），激光雷达+Orin-X</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>英伟达Orin-X（智己）；地平线征程（飞凡/荣威）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式（双HPC）</span></td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>零束全栈3.0向中央计算演进，ICC智算域控制器已量产</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>暂无自研车规芯片</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>上汽通过零束科技构建全栈自研能力，智己是技术旗舰。与Momenta深度绑定（上汽为Momenta第一大外部股东）是差异化优势。舱驾一体节奏偏慢。</div>
+      </div>
+    </div>
+
+    <!-- 广汽 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.12 广汽集团 — 星灵架构 · 昊铂GSD · 3激光雷达</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>星灵架构（集中式计算平台方向）</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>昊铂：高通8295（GT/HT）；埃安：高通8155/6125</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>ADiGO智能系统（自研）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>GSD（2025款昊铂）：3激光雷达+6毫米波+13摄像头</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>英伟达Orin-X（昊铂）；地平线征程（埃安）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式</span></td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>星灵架构向中央计算演进，时间表未明确</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>暂无公开信息</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>广汽"高端先行"策略——昊铂搭载高阶智驾（3激光雷达），埃安主打性价比。舱驾一体布局相对滞后。</div>
+      </div>
+    </div>
+
+    <!-- 奇瑞 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.13 奇瑞汽车 — 星途ET5首发征程6P · 智能化中心整合</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>域集中式，向中央计算演进</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>星途：高通8295（ET5等）；捷途/iCAR：高通8155</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>雄狮智云系统（自研）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>星途ET5首发地平线HSD（征程6P城区NOA）；部分车型知行科技iDC（TI芯片）</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>地平线征程6P（高阶）、征程6M（中阶）、TI TDA4（泊车）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式</span></td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>2025年整合雄狮科技+大卓智能+研发总院为统一"智能化中心"</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>暂无自研车规芯片</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>奇瑞从"分散采购"走向"集中整合"。深度绑定地平线（征程6P首发星途ET5）是重要战略选择。品牌众多、方案离散度高是整合难点。</div>
+      </div>
+    </div>
+
+    <!-- 一汽红旗 -->
+    <div class="accordion">
+      <div class="accordion-header" onclick="toggleAcc(this)">3.14 一汽红旗 — 东软座舱域控 · 红旗1号五域融合芯片</div>
+      <div class="accordion-body">
+        <div class="table-wrap"><table>
+          <thead><tr><th>维度</th><th>详情</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EE架构</strong></td><td>域集中式架构</td></tr>
+            <tr><td><strong>座舱方案</strong></td><td>高通8155 + 东软集团座舱域控制器</td></tr>
+            <tr><td><strong>座舱OS</strong></td><td>红旗智联系统（自研）</td></tr>
+            <tr><td><strong>智驾方案</strong></td><td>多传感器融合，L2+级别</td></tr>
+            <tr><td><strong>智驾芯片</strong></td><td>地平线征程系列 / 英伟达（高阶车型）</td></tr>
+            <tr><td><strong>域控架构</strong></td><td><span class="tag tag-yellow">分离式</span></td></tr>
+            <tr><td><strong>舱驾一体规划</strong></td><td>红旗1号多域融合芯片（驾驶辅助+座舱+车身+通信+安全五域融合）已发布</td></tr>
+            <tr><td><strong>自研芯片</strong></td><td>红旗1号（联合研制，多域融合芯片）</td></tr>
+          </tbody>
+        </table></div>
+        <div class="highlight-box insight"><strong>📌 判断：</strong>一汽红旗通过"红旗1号"芯片展示了对多域融合的技术布局，但量产节奏和实际搭载车型尚不明确。</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== 四、综合对比总表 ===== -->
+<div class="section" id="comparison">
+  <div class="section-header">
+    <span class="icon" style="background:#ede9fe;color:#6d28d9">📊</span>
+    <h2>四、综合对比总表</h2>
+  </div>
+  <div class="section-body">
+    <div class="table-wrap"><table>
+      <thead><tr><th>车企</th><th>旗舰座舱SoC</th><th>座舱OS</th><th>旗舰智驾芯片</th><th>智驾系统</th><th>域控架构</th><th>舱驾一体进度</th><th>自研芯片</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>比亚迪</strong></td>
+          <td>高通8295</td><td>DiLink OS</td><td>双Orin-X / 征程J6M</td><td>天神之眼ABC</td>
+          <td><span class="tag tag-yellow">分离式</span></td>
+          <td>2027+（璇玑A3）</td><td>璇玑A3(4nm智驾)</td>
+        </tr>
+        <tr>
+          <td><strong>吉利</strong></td>
+          <td>高通8295/龙鹰一号</td><td>Flyme Auto/ZEEKR OS</td><td>Orin-X/Thor / 征程6M</td><td>千里浩瀚H1-H9</td>
+          <td><span class="tag tag-yellow">分离式</span></td>
+          <td>亿咖通单芯片舱行泊一体已验证</td><td>龙鹰一号(7nm座舱)/AD1000</td>
+        </tr>
+        <tr>
+          <td><strong>长城</strong></td>
+          <td>高通8295</td><td>Coffee OS 3</td><td>Orin-X / 征程</td><td>Coffee Pilot</td>
+          <td><span class="tag tag-yellow">分离式</span></td>
+          <td>未公布明确时间表</td><td>无</td>
+        </tr>
+        <tr>
+          <td><strong>长安</strong></td>
+          <td>高通8155/8295</td><td>鸿蒙OS/Deepal OS</td><td>华为昇腾/征程</td><td>华为ADS/自研</td>
+          <td><span class="tag tag-yellow">分离式</span></td>
+          <td>德赛西威战略合作推进中</td><td>无</td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td><strong>蔚来</strong></td>
+          <td>高通8295</td><td>SkyOS·天枢</td><td>4×Orin-X → <strong>神玑NX9031</strong></td><td>NIO NAD</td>
+          <td><span class="tag tag-green">舱驾融合One Board</span></td>
+          <td>✅ <strong>已量产</strong>（ADAM）</td><td>神玑NX9031(5nm智驾)</td>
+        </tr>
+        <tr>
+          <td><strong>小鹏</strong></td>
+          <td>高通8295</td><td>XOS天玑</td><td>双Orin-X → <strong>图灵AI</strong></td><td>XNGP</td>
+          <td><span class="tag tag-yellow">分离式</span></td>
+          <td>图灵芯片支持舱驾一体</td><td>图灵AI(700+TOPS)</td>
+        </tr>
+        <tr>
+          <td><strong>理想</strong></td>
+          <td>高通8797 Elite(2026)</td><td>理想同学/Livis</td><td>双Orin-X / 征程5</td><td>AD Max/Pro</td>
+          <td><span class="tag tag-yellow">分离式</span></td>
+          <td>LEEA 3.0向CCU演进</td><td>马赫M100(座舱AI)</td>
+        </tr>
+        <tr>
+          <td><strong>问界</strong></td>
+          <td>华为麒麟</td><td>鸿蒙OS</td><td>华为昇腾(MDC)</td><td>华为ADS 4.0</td>
+          <td><span class="tag tag-yellow">分离式</span></td>
+          <td>华为CCU平台规划中</td><td>华为全栈(麒麟+昇腾)</td>
+        </tr>
+        <tr>
+          <td><strong>小米</strong></td>
+          <td>高通8295/骁龙8 Gen3</td><td>HyperOS</td><td>双Orin-X</td><td>Xiaomi Pilot</td>
+          <td><span class="tag tag-yellow">分离式</span>→<span class="tag tag-blue">四合一</span></td>
+          <td>2026款SU7四合一域控</td><td>澎湃(消费级积累)</td>
+        </tr>
+        <tr style="background:#f0fdf4">
+          <td><strong>零跑</strong></td>
+          <td>高通8295</td><td>Leapmotor OS</td><td>Orin-X / 征程</td><td>Leapmotor Pilot</td>
+          <td><span class="tag tag-green">四域合一中央计算</span></td>
+          <td>✅ <strong>已量产+2026 CES四域融合</strong></td><td>无（深度绑定高通）</td>
+        </tr>
+        <tr>
+          <td><strong>上汽</strong></td>
+          <td>高通8295</td><td>零束银河OS</td><td>Orin-X / 征程</td><td>IM AD 3.0(Momenta)</td>
+          <td><span class="tag tag-yellow">分离式(双HPC)</span></td>
+          <td>零束全栈3.0向中央计算演进</td><td>无</td>
+        </tr>
+        <tr>
+          <td><strong>广汽</strong></td>
+          <td>高通8295</td><td>ADiGO</td><td>Orin-X / 征程</td><td>GSD</td>
+          <td><span class="tag tag-yellow">分离式</span></td>
+          <td>星灵架构规划中</td><td>无</td>
+        </tr>
+        <tr>
+          <td><strong>奇瑞</strong></td>
+          <td>高通8295</td><td>雄狮智云</td><td>征程6P / TI TDA4</td><td>地平线HSD/自研</td>
+          <td><span class="tag tag-yellow">分离式</span></td>
+          <td>智能化中心整合中</td><td>无</td>
+        </tr>
+        <tr>
+          <td><strong>一汽红旗</strong></td>
+          <td>高通8155</td><td>红旗智联</td><td>征程/Orin</td><td>自研L2+</td>
+          <td><span class="tag tag-yellow">分离式</span></td>
+          <td>红旗1号五域融合芯片</td><td>红旗1号(联合研制)</td>
+        </tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<!-- ===== 五、舱驾一体进展分级 ===== -->
+<div class="section" id="tiers">
+  <div class="section-header">
+    <span class="icon" style="background:#fce7f3;color:#be185d">🏆</span>
+    <h2>五、舱驾一体进展分级</h2>
+  </div>
+  <div class="section-body">
+    <div class="tier-grid">
+      <div class="tier-card tier1">
+        <div class="tier-badge">第一梯队</div>
+        <h4>✅ 已量产舱驾融合</h4>
+        <ul>
+          <li><strong>蔚来</strong> — One Board ADAM中央计算平台<br><small>2024款NT2.0全系（ET5/ET7/ES6/ES8等）| 2024.2</small></li>
+          <li><strong>零跑</strong> — 四叶草架构（四域合一）<br><small>C10/C11/C16等 | 2024-2025</small></li>
+        </ul>
+      </div>
+      <div class="tier-card tier2">
+        <div class="tier-badge">第二梯队</div>
+        <h4>🔧 已公布明确量产时间表</h4>
+        <ul>
+          <li><strong>吉利（亿咖通）</strong> — 安托拉1000 SPB单芯片舱行泊一体<br><small>2025已验证，即将量产</small></li>
+          <li><strong>小米</strong> — 四合一域控模块（SU7 2026款）<br><small>2026</small></li>
+          <li><strong>比亚迪</strong> — 璇玑A3 + 舱驾融合专利<br><small>2027+</small></li>
+          <li><strong>问界（华为）</strong> — 下一代CCU中央计算平台<br><small>2026-2027</small></li>
+        </ul>
+      </div>
+      <div class="tier-card tier3">
+        <div class="tier-badge">第三梯队</div>
+        <h4>📋 规划中 / 探索阶段</h4>
+        <ul>
+          <li><strong>小鹏</strong> — 图灵芯片已支持，量产时间待明确</li>
+          <li><strong>理想</strong> — LEEA 3.0向CCU演进</li>
+          <li><strong>上汽</strong> — 零束全栈3.0双HPC → 中央计算</li>
+          <li><strong>长安</strong> — 与德赛西威合作推进</li>
+          <li><strong>广汽</strong> — 星灵架构演进</li>
+          <li><strong>奇瑞</strong> — 智能化中心整合中</li>
+          <li><strong>长城</strong> — 未公布明确时间表</li>
+          <li><strong>一汽红旗</strong> — 红旗1号芯片待量产</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 六、芯片供应链格局 ===== -->
+<div class="section" id="chips">
+  <div class="section-header">
+    <span class="icon" style="background:#e0f2fe;color:#0284c7">🔬</span>
+    <h2>六、芯片供应链格局</h2>
+  </div>
+  <div class="section-body">
+    <h3>座舱芯片竞争格局</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>芯片</th><th>定位</th><th>主要搭载车企</th></tr></thead>
+      <tbody>
+        <tr><td><strong>高通骁龙8295</strong></td><td><span class="tag tag-blue">旗舰标配（5nm）</span></td><td>比亚迪/吉利/蔚来/小鹏/理想/小米/零跑/智己/昊铂</td></tr>
+        <tr><td><strong>高通骁龙8797 Elite</strong></td><td><span class="tag tag-purple">下一代旗舰（2026）</span></td><td>理想L9（全球首发）</td></tr>
+        <tr><td><strong>高通骁龙8155</strong></td><td>中高端（7nm）</td><td>多家中端车型</td></tr>
+        <tr><td><strong>龙鹰一号</strong></td><td><span class="tag tag-green">国产替代（7nm）</span></td><td>吉利银河/领克/一汽</td></tr>
+        <tr><td><strong>华为麒麟</strong></td><td>鸿蒙生态专属</td><td>问界/阿维塔</td></tr>
+      </tbody>
+    </table></div>
+    <div class="highlight-box"><strong>📊 格局判断：</strong>高通8295是2024-2025年旗舰车型的"标配答案"，市占率遥遥领先。龙鹰一号是唯一大规模上车的国产座舱SoC（吉利体系）。华为麒麟仅在鸿蒙生态内使用。</div>
+
+    <h3 style="margin-top:2rem">智驾芯片竞争格局</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>芯片</th><th>算力</th><th>定位</th><th>主要搭载车企</th></tr></thead>
+      <tbody>
+        <tr><td><strong>英伟达Orin-X</strong></td><td>254 TOPS/颗</td><td><span class="tag tag-blue">高阶智驾</span></td><td>比亚迪/蔚来/小鹏/理想/小米/智己/昊铂</td></tr>
+        <tr><td><strong>英伟达Thor</strong></td><td>2000 TOPS</td><td>下一代旗舰</td><td>吉利/极氪（规划中）</td></tr>
+        <tr><td><strong>地平线征程5</strong></td><td>128 TOPS</td><td>中阶智驾</td><td>理想AD Pro/比亚迪天神之眼C</td></tr>
+        <tr><td><strong>地平线征程6M</strong></td><td>~100 TOPS</td><td>中阶NOA</td><td>吉利千里浩瀚H1/H3/比亚迪</td></tr>
+        <tr><td><strong>地平线征程6P</strong></td><td>560 TOPS</td><td>高阶城区NOA</td><td>奇瑞星途ET5（首发）</td></tr>
+        <tr><td><strong>华为昇腾（MDC）</strong></td><td>自研</td><td>华为全栈</td><td>问界/阿维塔</td></tr>
+        <tr><td><strong>小鹏图灵</strong></td><td>700+ TOPS</td><td><span class="tag tag-green">自研替代</span></td><td>小鹏（2025 Q2量产）</td></tr>
+        <tr><td><strong>蔚来神玑NX9031</strong></td><td>5nm自研</td><td><span class="tag tag-green">自研替代</span></td><td>蔚来ET9（2025.4量产）</td></tr>
+        <tr><td><strong>比亚迪璇玑A3</strong></td><td>>700 TOPS（单颗）</td><td><span class="tag tag-yellow">自研替代</span></td><td>腾势新车（预计2027）</td></tr>
+      </tbody>
+    </table></div>
+    <div class="highlight-box"><strong>📊 格局判断：</strong>英伟达Orin-X仍是高阶智驾"硬通货"，但自研芯片（蔚来神玑/小鹏图灵/比亚迪璇玑）正在崛起。地平线征程系列在中阶市场快速渗透，"智驾平权"最大受益者。</div>
+  </div>
+</div>
+
+<!-- ===== 七、趋势判断 ===== -->
+<div class="section" id="trends">
+  <div class="section-header">
+    <span class="icon" style="background:#fef3c7;color:#b45309">🔮</span>
+    <h2>七、趋势判断与机会洞察</h2>
+  </div>
+  <div class="section-body">
+    <h3>五大确定性趋势</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>趋势</th><th>判断</th><th>置信度</th></tr></thead>
+      <tbody>
+        <tr><td><strong>舱驾一体是确定方向</strong></td><td>2026-2028年将成为量产集中期</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td><strong>智驾平权加速下沉</strong></td><td>10-15万级车型将普及高速NOA</td><td>⭐⭐⭐⭐⭐</td></tr>
+        <tr><td><strong>芯片自主化不可逆</strong></td><td>头部车企自研芯片从智驾切入，逐步覆盖座舱</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td><strong>双极格局松动</strong></td><td>地平线在中阶、自研芯片在高阶形成替代</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td><strong>软件定义硬件</strong></td><td>整车OS成为差异化关键（蔚来天枢/小米HyperOS/鸿蒙）</td><td>⭐⭐⭐⭐</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 style="margin-top:2rem">风险提示</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>风险</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td><strong>自研芯片量产风险</strong></td><td>从流片到上车通常需2年+，良率和产能是重大不确定性</td></tr>
+        <tr><td><strong>舱驾一体技术复杂度</strong></td><td>功能安全（智驾ASIL-D + 座舱QM）的融合是巨大挑战</td></tr>
+        <tr><td><strong>供应链锁定效应</strong></td><td>深度绑定单一芯片供应商（如华为/高通）可能限制灵活性</td></tr>
+        <tr><td><strong>算力军备竞赛</strong></td><td>芯片算力快速增长，过早量产可能面临快速过时风险</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 style="margin-top:2rem">机会判断</h3>
+    <ol>
+      <li><strong>中阶智驾芯片国产替代</strong>：地平线征程6系列在10-20万车型市场有巨大空间</li>
+      <li><strong>座舱AI芯片</strong>：大模型上车推动座舱算力需求激增（理想马赫M100路径值得关注）</li>
+      <li><strong>舱驾融合中间件</strong>：跨域通信、安全隔离、算力调度中间件是软件层机会</li>
+      <li><strong>整车OS生态</strong>：蔚来天枢/小米HyperOS/鸿蒙三种路径各有优势，生态绑定是关键壁垒</li>
+    </ol>
+  </div>
+</div>
+
+<!-- ===== 八、建议动作 ===== -->
+<div class="section" id="advice">
+  <div class="section-header">
+    <span class="icon" style="background:#dcfce7;color:#15803d">🎯</span>
+    <h2>八、建议动作</h2>
+  </div>
+  <div class="section-body">
+    <div class="table-wrap"><table>
+      <thead><tr><th>优先级</th><th>建议</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tag tag-red">P0</span></td><td><strong>明确自研 vs 供应商策略</strong></td><td>参考比亚迪/吉利"中低端外购+高端自研"双轨路径</td></tr>
+        <tr><td><span class="tag tag-yellow">P1</span></td><td><strong>评估舱驾一体时间表</strong></td><td>2026-2027是窗口期，晚于2028可能失去竞争力</td></tr>
+        <tr><td><span class="tag tag-yellow">P1</span></td><td><strong>选择智驾芯片战略伙伴</strong></td><td>评估英伟达/地平线/高通三条路径的长期绑定风险</td></tr>
+        <tr><td><span class="tag tag-blue">P2</span></td><td><strong>关注座舱AI大模型上车</strong></td><td>理想Livis/蔚来天枢AI是差异化方向</td></tr>
+        <tr><td><span class="tag tag-blue">P2</span></td><td><strong>跟踪自研芯片可行性</strong></td><td>蔚来/小鹏/比亚迪已证明可行，但投入巨大（百亿级）</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<!-- ===== 九、资料来源 ===== -->
+<div class="section" id="sources">
+  <div class="section-header">
+    <span class="icon" style="background:#f1f5f9;color:#475569">📚</span>
+    <h2>九、资料来源与说明</h2>
+  </div>
+  <div class="section-body">
+    <div class="table-wrap"><table>
+      <thead><tr><th>来源类型</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td>车企官网</td><td>比亚迪/蔚来/小鹏/理想/小米/零跑等官网技术页面</td></tr>
+        <tr><td>行业拆解</td><td>小米SU7域控拆解（电子工程专辑）、理想L9域控拆解（NE时代）</td></tr>
+        <tr><td>专利信息</td><td>比亚迪舱驾融合专利CN121763694A、长安座舱域控外观专利</td></tr>
+        <tr><td>展会信息</td><td>CES 2025/2026（极氪、零跑、高通发布）、2024/2025上海车展</td></tr>
+        <tr><td>行业分析</td><td>佐思汽研《座舱域控制器研究报告》、高工智能汽车SoC报告</td></tr>
+        <tr><td>企业公告</td><td>东软集团一汽红旗定点公告、德赛西威长安战略合作公告</td></tr>
+      </tbody>
+    </table></div>
+    <div class="highlight-box warn">
+      <strong>⚠️ 免责声明：</strong>本报告信息来源于公开渠道，部分技术细节和规划时间线可能因企业策略调整而变化。报告中标注"判断"的内容为分析师观点，仅供参考，不构成投资建议。
+    </div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p><strong>大象咨询</strong> © 2026 · 市场调研与竞品分析</p>
+  <p style="margin-top:.5rem;opacity:.5">报告仅供内部决策参考，未经授权不得对外传播</p>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="返回顶部">↑</button>
+
+<script>
+// Accordion
+function toggleAcc(header){
+  header.classList.toggle('open');
+  header.nextElementSibling.classList.toggle('show');
+}
+
+// Back to top
+window.addEventListener('scroll',function(){
+  document.getElementById('backTop').classList.toggle('visible',window.scrollY>600);
+});
+
+// Nav active state
+const sections=document.querySelectorAll('.section[id]');
+const navLinks=document.querySelectorAll('.nav-inner a');
+window.addEventListener('scroll',function(){
+  let current='';
+  sections.forEach(s=>{
+    if(window.scrollY>=s.offsetTop-120)current=s.getAttribute('id');
+  });
+  navLinks.forEach(a=>{
+    a.classList.toggle('active',a.getAttribute('href')==='#'+current);
+  });
+});
+
+// Smooth nav scroll offset
+navLinks.forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    const id=this.getAttribute('href').substring(1);
+    const el=document.getElementById(id);
+    if(el)window.scrollTo({top:el.offsetTop-80,behavior:'smooth'});
+  });
+});
+
+// Open first accordion by default (optional — uncomment to enable)
+// document.querySelector('.accordion-header')?.classList.add('open');
+// document.querySelector('.accordion-body')?.classList.add('show');
+</script>
+
+</body>
+</html>

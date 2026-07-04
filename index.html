@@ -168,36 +168,7 @@ tbody tr:hover{background:#eff6ff}
 <div class="section" id="domain">
   <div class="section-header"><span class="icon" style="background:#ede9fe;color:#6d28d9">🏭</span><h2>二、国内车企域控制器发展规划</h2></div>
   <div class="section-body">
-    <h3>2.1 域控架构与水冷板工艺的对应关系</h3>
-    <div class="table-wrap"><table>
-      <thead><tr><th>架构类型</th><th>热源特征</th><th>流道复杂度</th><th>水冷板工艺</th><th>当前占比</th></tr></thead>
-      <tbody>
-        <tr><td><strong>分离式</strong>（座舱+智驾独立）</td><td>热源分散，单域功耗可控</td><td>规则蛇形流道为主</td><td><span class="tag tag-fsw">搅拌摩擦焊 FSW</span></td><td><strong>90%+</strong></td></tr>
-        <tr><td><strong>舱驾一体</strong>（中央计算平台）</td><td>多热源集中，正反面均需散热</td><td>多层流道/针翅/铜铝复合</td><td><span class="tag tag-braze">钎焊</span></td><td><strong><10%</strong></td></tr>
-      </tbody>
-    </table></div>
-    <h3>2.2 国内车企域控架构分类</h3>
-    <div class="table-wrap"><table>
-      <thead><tr><th>车企</th><th>当前域控架构</th><th>智驾芯片</th><th>座舱芯片</th><th>水冷板工艺</th><th>舱驾一体规划</th></tr></thead>
-      <tbody>
-        <tr><td><strong>比亚迪</strong></td><td>分离式</td><td>双Orin-X/征程5</td><td>8295/8155</td><td><span class="tag tag-fsw">FSW</span></td><td>2027+（璇玑A3）</td></tr>
-        <tr><td><strong>吉利</strong></td><td>分离式为主</td><td>Orin-X/Thor/征程6M</td><td>8295/龙鹰一号</td><td><span class="tag tag-fsw">FSW为主</span></td><td>亿咖通单芯片已验证</td></tr>
-        <tr><td><strong>长城</strong></td><td>分离式</td><td>Orin-X/征程</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>未公布</td></tr>
-        <tr><td><strong>长安</strong></td><td>分离式</td><td>华为昇腾/征程</td><td>8155/8295</td><td><span class="tag tag-fsw">FSW</span></td><td>德赛西威合作中</td></tr>
-        <tr style="background:#fdf2f8"><td><strong>蔚来</strong> ⭐</td><td><strong>舱驾融合One Board</strong></td><td>4×Orin-X→神玑</td><td>8295</td><td><span class="tag tag-braze">钎焊</span></td><td>✅ 已量产</td></tr>
-        <tr><td><strong>小鹏</strong></td><td>分离式</td><td>双Orin-X→图灵AI</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>图灵支持，待明确</td></tr>
-        <tr><td><strong>理想</strong></td><td>分离式</td><td>双Orin-X/征程5</td><td>8295→8797</td><td><span class="tag tag-fsw">FSW</span></td><td>LEEA 3.0演进中</td></tr>
-        <tr><td><strong>问界(华为)</strong></td><td>分离式</td><td>华为昇腾MDC</td><td>华为麒麟</td><td><span class="tag tag-fsw">FSW</span></td><td>2026-2027</td></tr>
-        <tr style="background:#fdf2f8"><td><strong>小米</strong> ⭐</td><td><strong>分离式→四合一（YU7起钎焊）</strong></td><td>双Orin-X</td><td>8295/骁龙8 Gen3</td><td><span class="tag tag-braze">钎焊（YU7起）</span></td><td>2026款SU7四合一</td></tr>
-        <tr style="background:#fdf2f8"><td><strong>零跑</strong> ⭐</td><td><strong>四域合一中央计算</strong></td><td>Orin-X/征程</td><td>8295</td><td><span class="tag tag-braze">钎焊</span></td><td>✅ 已量产</td></tr>
-        <tr><td><strong>上汽(智己)</strong></td><td>分离式(双HPC)</td><td>Orin-X</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>零束3.0演进中</td></tr>
-        <tr><td><strong>广汽(昊铂)</strong></td><td>分离式</td><td>Orin-X/征程</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>星灵架构规划中</td></tr>
-        <tr><td><strong>奇瑞</strong></td><td>分离式</td><td>征程6P/TI TDA4</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>整合中</td></tr>
-        <tr><td><strong>一汽红旗</strong></td><td>分离式</td><td>征程/Orin</td><td>8155</td><td><span class="tag tag-fsw">FSW</span></td><td>红旗1号待量产</td></tr>
-      </tbody>
-    </table></div>
-
-    <h3 style="margin-top:1.5rem">2.2 整车电子架构演进趋势图</h3>
+    <h3>2.1 整车电子架构演进趋势图</h3>
     <p style="font-size:.85rem;color:var(--c-text2);margin-bottom:1rem">从分布式ECU → 域控分离式 → 舱驾一体中央计算，散热需求从"多块小冷板"演变为"单块高算力冷板"</p>
 
     <div class="arch-evolution">
@@ -288,9 +259,39 @@ tbody tr:hover{background:#eff6ff}
 
     <div class="callout key" style="margin-top:1rem"><strong>架构演进对水冷板的核心影响：</strong><br>• <strong>传统→分离式</strong>：从无水冷板 → 需要2块独立FSW水冷板（当前最大市场）<br>• <strong>分离式→舱驾一体</strong>：从2块FSW水冷板 → 1块钎焊水冷板（正反面散热+复杂流道）<br>• <strong>关键判断</strong>：分离式架构仍将占据3-5年主流，FSW水冷板是基本盘；舱驾一体钎焊是增量方向</div>
 
+    <h3 style="margin-top:1.5rem">2.2 域控架构与水冷板工艺的对应关系</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>架构类型</th><th>热源特征</th><th>流道复杂度</th><th>水冷板工艺</th><th>当前占比</th></tr></thead>
+      <tbody>
+        <tr><td><strong>分离式</strong>（座舱+智驾独立）</td><td>热源分散，单域功耗可控</td><td>规则蛇形流道为主</td><td><span class="tag tag-fsw">搅拌摩擦焊 FSW</span></td><td><strong>90%+</strong></td></tr>
+        <tr><td><strong>舱驾一体</strong>（中央计算平台）</td><td>多热源集中，正反面均需散热</td><td>多层流道/针翅/铜铝复合</td><td><span class="tag tag-braze">钎焊</span></td><td><strong><10%</strong></td></tr>
+      </tbody>
+    </table></div>
+
     <h3 style="margin-top:1.5rem">2.3 国内车企域控架构分类</h3>
-<div class="section" id="overseas">
-  <div class="section-header"><span class="icon" style="background:#fef3c7;color:#92400e">🌍</span><h2>三、海外车企域控制器发展规划</h2></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>车企</th><th>当前域控架构</th><th>智驾芯片</th><th>座舱芯片</th><th>水冷板工艺</th><th>舱驾一体规划</th></tr></thead>
+      <tbody>
+        <tr><td><strong>比亚迪</strong></td><td>分离式</td><td>双Orin-X/征程5</td><td>8295/8155</td><td><span class="tag tag-fsw">FSW</span></td><td>2027+（璇玑A3）</td></tr>
+        <tr><td><strong>吉利</strong></td><td>分离式为主</td><td>Orin-X/Thor/征程6M</td><td>8295/龙鹰一号</td><td><span class="tag tag-fsw">FSW为主</span></td><td>亿咖通单芯片已验证</td></tr>
+        <tr><td><strong>长城</strong></td><td>分离式</td><td>Orin-X/征程</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>未公布</td></tr>
+        <tr><td><strong>长安</strong></td><td>分离式</td><td>华为昇腾/征程</td><td>8155/8295</td><td><span class="tag tag-fsw">FSW</span></td><td>德赛西威合作中</td></tr>
+        <tr style="background:#fdf2f8"><td><strong>蔚来</strong> ⭐</td><td><strong>舱驾融合One Board</strong></td><td>4×Orin-X→神玑</td><td>8295</td><td><span class="tag tag-braze">钎焊</span></td><td>✅ 已量产</td></tr>
+        <tr><td><strong>小鹏</strong></td><td>分离式</td><td>双Orin-X→图灵AI</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>图灵支持，待明确</td></tr>
+        <tr><td><strong>理想</strong></td><td>分离式</td><td>双Orin-X/征程5</td><td>8295→8797</td><td><span class="tag tag-fsw">FSW</span></td><td>LEEA 3.0演进中</td></tr>
+        <tr><td><strong>问界(华为)</strong></td><td>分离式</td><td>华为昇腾MDC</td><td>华为麒麟</td><td><span class="tag tag-fsw">FSW</span></td><td>2026-2027</td></tr>
+        <tr style="background:#fdf2f8"><td><strong>小米</strong> ⭐</td><td><strong>分离式→四合一（YU7起钎焊）</strong></td><td>双Orin-X</td><td>8295/骁龙8 Gen3</td><td><span class="tag tag-braze">钎焊（YU7起）</span></td><td>2026款SU7四合一</td></tr>
+        <tr style="background:#fdf2f8"><td><strong>零跑</strong> ⭐</td><td><strong>四域合一中央计算</strong></td><td>Orin-X/征程</td><td>8295</td><td><span class="tag tag-braze">钎焊</span></td><td>✅ 已量产</td></tr>
+        <tr><td><strong>上汽(智己)</strong></td><td>分离式(双HPC)</td><td>Orin-X</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>零束3.0演进中</td></tr>
+        <tr><td><strong>广汽(昊铂)</strong></td><td>分离式</td><td>Orin-X/征程</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>星灵架构规划中</td></tr>
+        <tr><td><strong>奇瑞</strong></td><td>分离式</td><td>征程6P/TI TDA4</td><td>8295</td><td><span class="tag tag-fsw">FSW</span></td><td>整合中</td></tr>
+        <tr><td><strong>一汽红旗</strong></td><td>分离式</td><td>征程/Orin</td><td>8155</td><td><span class="tag tag-fsw">FSW</span></td><td>红旗1号待量产</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</div>
+
+<!-- 三、海外车企 -->
   <div class="section-body">
     <div class="table-wrap"><table>
       <thead><tr><th>车企</th><th>当前域控架构</th><th>智驾芯片/方案</th><th>座舱芯片</th><th>水冷板工艺</th><th>舱驾一体规划</th></tr></thead>
